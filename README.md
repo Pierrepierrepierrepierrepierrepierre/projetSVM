@@ -1,11 +1,6 @@
 <h1 align="center" style="color:red; font-weight:bold;">Modélisation et prédiction de la qualité et du type de vin</h1>
 
-https://s3.amazonaws.com/images.ecwid.com/images/26821218/1391586957.jpg![image](https://github.com/ElliotCH/projetSVM/assets/117682143/20e3ab8c-5cf4-43ee-b642-df5932960ae0)
-
-
-
-
-## Introduction : 
+# Introduction : 
 
 Dans le cadre de notre projet de Machine Learning et de Deep Learning, nous nous sommes lancés dans l'analyse approfondie d'une base de données portant sur la qualité et le type de vins. Cette base, récupérée sur le site de référence Kaggle et créé par un auteur du nom de Raj Parmar, inclut des informations détaillées sur un vaste éventail de vins, rouges comme blancs.
 Notre objectif est double : prédire la qualité du vin, évaluée sur une échelle de 0 à 10, et classifier le vin en tant que rouge ou blanc. Cette tâche s'appuie sur l'exploitation de divers paramètres chimiques et physiques des vins, tels que l'acidité, le sucre résiduel, les chlorures, le sulfite, la densité, le pH, les sulfates, et la teneur en alcool. 
