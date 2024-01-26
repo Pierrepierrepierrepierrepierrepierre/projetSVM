@@ -1,4 +1,7 @@
-<h1 align="center" style="color:red; font-weight:bold;">Votre titre en rouge et en gras</h1>
+<h1 align="center" style="color:red; font-weight:bold;">Modélisation et prédiction de la qualité et du type de vin</h1>
+
+https://s3.amazonaws.com/images.ecwid.com/images/26821218/1391586957.jpg![image](https://github.com/ElliotCH/projetSVM/assets/117682143/20e3ab8c-5cf4-43ee-b642-df5932960ae0)
+
 
 
 
