@@ -10,19 +10,22 @@ Dans un deuxième temps, nous avons exploré les distributions et les corrélati
 Description du dataset
 Nous avons exploité une base de données disponible sur le site Kaggle, spécialisée dans les caractéristiques et la qualité des vins rouges et blancs. Cette base de données, riche en informations, nous permet d'analyser en profondeur les différents aspects influençant la qualité du vin. La base de données initiale comprend des enregistrements sur un grand nombre de vins, couvrant diverses variables chimiques et physiques.
 1. Description des variables
-Type : Cette variable indique si le vin est rouge ou blanc.
-Fixed Acidity : L'acidité fixe du vin.
-Volatile Acidity : L'acidité volatile, qui influence l'arôme et le goût du vin.
-Citric Acid : Le niveau d'acide citrique, un facteur important dans la saveur du vin.
-Residual Sugar : La quantité de sucre résiduel après la fin de la fermentation.
-Chlorides : La concentration en chlorures, affectant le goût salé du vin.
-Free Sulfur Dioxide : Quantité de dioxyde de soufre libre, jouant un rôle dans la prévention de l'oxydation et la croissance de microbes.
-Total Sulfur Dioxide : Quantité totale de dioxyde de soufre, un indicateur important pour la conservation du vin.
-Density : La densité du vin, liée à son taux d'alcool et de sucre.
-pH : Mesure de l'acidité ou de la basicité du vin.
-Sulphates : Niveau de sulfates, influençant la fermentation et le goût du vin.
-Alcohol : Le pourcentage d'alcool dans le vin.
-Quality : La note de qualité attribuée au vin, sur une échelle de 0 à 10.
+| Caractéristique       | Description |
+|-----------------------|-------------|
+| Type                  | Indique si le vin est rouge ou blanc. |
+| Fixed Acidity         | L'acidité fixe du vin. |
+| Volatile Acidity      | L'acidité volatile, influençant l'arôme et le goût du vin. |
+| Citric Acid           | Le niveau d'acide citrique, un facteur important dans la saveur du vin. |
+| Residual Sugar        | La quantité de sucre résiduel après la fin de la fermentation. |
+| Chlorides             | La concentration en chlorures, affectant le goût salé du vin. |
+| Free Sulfur Dioxide   | Quantité de dioxyde de soufre libre, jouant un rôle dans la prévention de l'oxydation et la croissance de microbes. |
+| Total Sulfur Dioxide  | Quantité totale de dioxyde de soufre, un indicateur important pour la conservation du vin. |
+| Density               | La densité du vin, liée à son taux d'alcool et de sucre. |
+| pH                    | Mesure de l'acidité ou de la basicité du vin. |
+| Sulphates             | Niveau de sulfates, influençant la fermentation et le goût du vin. |
+| Alcohol               | Le pourcentage d'alcool dans le vin. |
+| Quality               | La note de qualité attribuée au vin, sur une échelle de 0 à 10. |
+
 
 Analyse exploratoire 
 Analyse univariée
