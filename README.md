@@ -1,4 +1,4 @@
-<h1 style="text-align:center; color:red; font-weight:bold;"># Prédiction et modélisation de la qualité et du type de vin </h1>
+<h1 style="text-align:center; color:red; font-weight:bold;">Prédiction et modélisation de la qualité et du type de vin</h1>
 
 
 ## Introduction : 
