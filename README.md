@@ -2,6 +2,9 @@
 
 ## Introducion
 
+![oenologie-quelles-differences-entre-un-vin-blanc-et-un-vin-rouge-istock-com-piranka-209-1537370769](https://github.com/Pierrepierrepierrepierrepierrepierre/projetSVM/assets/117682143/af589b39-1ba7-4e9b-95fb-86bda8b86ee1)
+
+
 | Caractéristique       | Description |
 |-----------------------|-------------|
 | Type                  | Indique si le vin est rouge ou blanc. |
