@@ -47,8 +47,9 @@ Nous passons à présent à l'analyse exploratoire, nous allons éxaminer de plu
 Le graphique ci dessus nous montre la répartition de deux types de vins. On observe une répartition assez inégale, en effet, le vin blanc représente une part beaucoup plus importante, avec 75.39%, tandis que le vin rouge est moins fréquent à 24.61%.
 
 
+![image](https://github.com/Pierrepierrepierrepierrepierrepierre/projetSVM/assets/124379009/8d17d4b3-d250-4f57-b818-cbadc35f43c6)
 
-![image](https://github.com/Pierrepierrepierrepierrepierrepierre/projetSVM/assets/124379009/46a9e795-32e0-4e6a-b87d-540bf40d3ccc)
+
 
 Pour ce qui est de la variable qualité, nous avons préféré un histogramme en barre pour analyser la répartition. Les histogrammes en barres offrent une comparaison et une interprétation plus claires des fréquences lorsque l’on analyse des variables catégorielles. 
 Ainsi, nous observons une distribution asymétrique où la majorité des vins se concentrent autour des notes de qualité moyenne correspondant à une loi normale, ce qui est logique  puisque la plupart des vins reçoivent des notes moyennes et moins reçoivent des notes extrêmes.
