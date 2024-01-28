@@ -283,6 +283,135 @@ Nous commençons par l’analyse multiclasse qui à pour but de prédire la note
 
 ### Les modèles utilisés 
 
+Pour prédire la qualité du vin, nous avons utilisé plusieurs modèles, à savoir les approches One-vs-One (OvO), One-vs-Rest (OvR) et les réseaux de neurones.
+Le modèle OvO compare chaque paire de catégories pour mieux les distinguer, un peu comme si on comparait chaque type de vin deux par deux pour voir ce qui les différencie. Le modèle OvR, quant à lui, regarde chaque catégorie de vin séparément et la compare à toutes les autres en même temps. C'est une méthode plus simple et rapide, surtout quand il y a beaucoup de catégories de vins différentes à analyser.
+Nous avons également utilisé des réseaux de neurones pour évaluer la qualité du vin. Le réseau de neurones passe en revue toutes les informations sur chaque vin (l’ensemble de nos variables explicatives) et apprend à partir de ces données pour prédire sa qualité. 
+
+### Comparaison des modèles 
+Maintenant, nous pouvons passer à la comparaison des résultats obtenus pour ces différents modèles dans l’optique de sélectionner le meilleur. Nous commencerons par comparer les modèles ovo et ovr puis nous intégrerons le modèle de réseau de neurones à l'analyse.
+
+Nous avons réalisé une première validation croisée, en utilisant 5 subdivisions (folds), pour examiner nos 2 modèles différents. Le graphique présenté ci-dessous illustre le score de précision, qui correspond au ratio des classifications correctes sur le nombre total de classification pour chacune des 5 subdivisions.
+
+![image](https://github.com/Pierrepierrepierrepierrepierrepierre/projetSVM/assets/124379009/82df27bd-849f-4db8-8ff1-f8173466c9d3)
+
+Le graphique illustre la performance de deux modèles sur cinq essais distincts d'une validation croisée. Le modèle représenté OVO (ligne bleu) démontre une précision supérieure et plus stable que le modèle OVR, signalant une fiabilité accrue et une constance dans la prédiction sur les différents folds. Néanmoins, il est important de noter que la précision, bien qu'utile, n'est pas l'unique indicateur de la performance d'un modèle. Des mesures telles que le Recall, l'aire sous la courbe ROC (AUC) et le score F1 sont essentielles pour une évaluation approfondie et précise des modèles.
+
+
+Nous comparons maintenant ces métriques avec le modèle réseau de neurones et obtenons les métriques suivantes :
+
+| Méthode             | Précision | Rappel  | F1-score | Accuracy |
+|---------------------|-----------|---------|----------|----------|
+| OVO (One-vs-One)    | 0.5515    | 0.4423  | 0.4657   | 0.4423   |
+| OVR (One-vs-Rest)   | 0.5188    | 0.3562  | 0.3698   | 0.3562   |
+| Réseau de Neurones  | 0.2443    | 0.3208  | 0.2282   | 0.3821   |
+
+
+Nous concluons donc que le modèle OVO semble offrir les meilleures performances, avec une précision relativement élevée et une meilleure capacité à classer correctement les échantillons par rapport aux modèles OVR et Réseau de Neurones. Le modèle OVR, bien qu'ayant une précision et un rappel inférieurs à OVO, surpasse légèrement le Réseau de Neurones en termes d'accuracy. Cependant, le Réseau de Neurones se trouve à la traîne avec des scores nettement inférieurs dans toutes les métriques, notamment en précision et en rappel, suggérant qu'il pourrait avoir du mal à gérer correctement les classifications dans ce cas spécifique.
+
+### Grid Search sur meilleurs modèles
+
+Nous n'avons pas procédé à l'optimisation par grid search pour le meilleur modèle multiclasse, comme initialement prévu, car le processus s'est avéré être excessivement long et fastidieux à exécuter.
+
+
+## Analyse de classification binaire 
+
+Nous nous interessons maintenant à l’analyse binaire qui à pour but de prédire le type de vin.
+
+### Les modèles utilisés 
+
+Pour commencer cette partie, nous résumons succinctement chaque méthode utilisée : 
+
+Régression Logistique (lgr) : Utilisée pour des classifications binaires, elle modélise la probabilité d'un événement en fonction des variables d'entrée.
+Classification à Vecteurs de Support Linéaire (lsvc) : Trouve un hyperplan qui sépare de manière optimale les classes, elle s’avère particulièrement efficace pour des classifications précises.
+Classificateur à Descente de Gradient Stochastique (sgdc) : Optimise des modèles linéaires de manière efficace, particulièrement adapté aux grands ensembles de données.
+Classification à Vecteurs de Support (svc) : Utilise une marge maximale pour distinguer les classes, efficace même avec des frontières de décision complexes.
+Fonction de Base Radiale (rbf) et Noyau Polynomial (poly) : Deux fonctions de noyau pour SVM, traitant respectivement les relations non linéaires et complexes entre les caractéristiques.
+Nous utiliserons également un réseau de neurones pour cette analyse.
+
+### Comparaison des modèles 
+
+![image](https://github.com/Pierrepierrepierrepierrepierrepierre/projetSVM/assets/124379009/dde84a0c-f0ed-4146-b4af-5ee4be727334)
+
+Il est important de souligner que la précision fournit une évaluation de la performance globale d'un modèle sur un ensemble de données, par ailleurs, la stabilité indique la constance de cette performance sur différents ensembles de données ou situations. Un modèle optimal allie donc une haute précision à une grande stabilité, assurant ainsi des prédictions fiables et régulières.
+
+| Modèle N° | Accuracy                | Std                        |
+|-----------|-------------------------|----------------------------|
+| 0         | 0.9892885993348649      | 0.001433107725945217       |
+| 1         | 0.9891563242025899      | 0.0015924545038446404      |
+| 2         | 0.9880985602730481      | 0.002765273489977155       |
+| 3         | 0.989949800144777       | 0.001271630019946524       |
+| 4         | 0.9923299656941428      | 0.001962150690119038       |
+| 5         | 0.9927268785167002      | 0.0015505065873888573      |
+
+En conclusion, les modèles rbf et poly se distinguent par leur performance, avec une légère avance pour le modèle poly, notamment dans les derniers folds. Bien que les autres modèles (lgr, lsvc, sgdc, svc) affichent une certaine variabilité, ils maintiennent une stabilité relative qui ne permet pas de surpasser les modèles rbf et poly. Concernant la stabilité, le modèle poly présente une légère supériorité par rapport au modèle rbf, le positionnant ainsi comme le meilleur sur l'ensemble des métriques analysées.
+Nous regardons à présent les métriques pour le réseaux de neurones et observons les résultats suivants ; 
+
+| Métrique  | Valeur                 |
+|-----------|------------------------|
+| Accuracy  | 0.9941471571906354     |
+| Precision | 0.9936775553213909     |
+| Recall    | 0.9989406779661016     |
+| F1 Score  | 0.9963021658742736     |
+
+Le modèle a montré une excellente performance sur l'ensemble de validation, avec une exactitude remarquable de 99.41%, indiquant que presque toutes les prédictions étaient correctes. La précision était également très élevée à 99.37%, signifiant que la majorité des cas classés comme positifs étaient réellement positifs. Le rappel, à 99.89%, montre que le modèle a identifié avec succès presque tous les cas positifs réels. Le score F1 élevé de 99.63% révèle un équilibre parfait entre précision et rappel. La matrice de confusion confirme ces résultats avec un très faible nombre de faux positifs et un seul faux négatif, soulignant la fiabilité exceptionnelle du modèle dans ses prédictions faisant de lui celui que l’on retiendra comme notre meilleur modèle. au vu de son accuracy qui dépasse nos meilleurs modèles SVM.
+
+
+faire une phrase pour expliquer pourquoi on gridsearch pas sur le rdn
+
+
+
+### Grid Search sur le meilleur modèle SVM
+
+
+L'approche GridSearch, souvent utilisée en apprentissage automatique, est une méthode pour sélectionner les meilleurs paramètres pour un modèle donné. Cette technique utilise la création d'une “grille" de paramètres possibles pour le modèle. Chaque combinaison de paramètres dans cette grille est ensuite évaluée et comparée.
+Dans les modèles SVM, C et gamma sont des paramètres permettant l’ajustement du modèle. Le paramètre C contrôle la régularisation et influence la complexité du modèle. Une valeur plus faible de C mène à une simplification du modèle, limitant le surajustement mais risquant le sous-ajustement, tandis qu'une valeur élevée permet une meilleure adaptation aux données d'entraînement mais avec un risque accru de surajustement. 
+D'autre part, gamma détermine l'impact de chaque point de données sur la formation du modèle. Un gamma élevé augmente l'influence de chaque point, menant potentiellement à un modèle trop spécifique aux données d'entraînement (surajustement), alors qu'un gamma faible diminue cette influence, favorisant ainsi la généralisation du modèle.
+
+
+| Paramètre | Valeur |
+|-----------|--------|
+| C         | 10     |
+| gamma     | 0.1    |
+
+
+Cela indique, comme dit précédemment qu'une régularisation modérée combinée à une influence relativement faible de chaque point de données produit les meilleurs résultats pour notre modèle. Regardons à présent l’évolution des métriques.
+
+
+| Metric    | Class 0 | Class 1 |
+|-----------|---------|---------|
+| Precision | 0.99    | 0.99    |
+| Recall    | 0.97    | 1.00    |
+| F1-score  | 0.98    | 0.99    |
+| Support   | 252     | 944     |
+
+
+Le modèle a démontré une excellente performance sur l'ensemble de test, atteignant une exactitude globale de 99.16%. Dans le détail, pour la classe 0, il a montré une précision de 99%, un rappel de 97%, et un score F1 de 98%, indiquant une grande précision et une bonne capacité à identifier correctement cette classe. Pour la classe 1, le modèle a été encore plus performant, avec une précision et un rappel de 99% et 100% respectivement, aboutissant à un score F1 de 99%. Ces résultats soulignent non seulement la capacité du modèle à distinguer avec précision les deux classes, mais aussi son équilibre remarquable entre précision et rappel, comme reflété dans les scores F1 élevés et les moyennes globales proches de 99%.
+
+
+
+### Importance des variables 
+
+Pour finir cette analyse, il nous a semblé pertinent d’étudier l’importance des variables, pour ce faire nous avons utilisé une méthode de permutation.
+
+La méthode de permutation permet d’évaluer l'importance des caractéristiques dans un modèle SVM. Pour ce faire, on mélange aléatoirement les valeurs d'une caractéristique dans l'ensemble de test et observe l'effet sur la performance du modèle. Une baisse notable de la performance après la permutation indique que la caractéristique est importante. En répétant cette opération plusieurs fois et en moyennant les résultats, on obtient une estimation fiable de l'importance de chaque caractéristique. Le graphique à boîtes illustre cette importance, permettant d'identifier rapidement les caractéristiques essentielles au modèle.
+
+![image](https://github.com/Pierrepierrepierrepierrepierrepierre/projetSVM/assets/124379009/7df308b3-c7a7-4c65-83b6-39b5c4a5a94a)
+
+En observant le graphique généré, nous pouvons interpréter l'importance des différentes caractéristiques dans la détermination du type de vin. Les caractéristiques situées vers le haut, avec des valeurs d'importance plus élevées sur l'axe des x, sont celles qui influencent le plus le modèle. Par exemple, les "chlorides" et le "total sulfur dioxide" semblent être des indicateurs très influents avec des boîtes s'étendant plus loin sur l'axe des x. Cela suggère qu'une permutation de ces valeurs a un impact notable sur la capacité du modèle à différencier les vins rouges des blancs.
+En revanche, les caractéristiques en bas du graphique, telles que "quality_5" et "quality_6", ont des boîtes qui sont très proches de l'origine sur l'axe des x, indiquant que la permutation de ces caractéristiques a peu ou pas d'effet sur la performance du modèle. Nous concluons donc que ces caractéristiques sont potentiellement moins importantes pour la prédiction du type de vin.
+
+# Conclusion
+
+
+
+
+
+
+
+
+
+
+
 
 
 
