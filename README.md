@@ -154,7 +154,6 @@ A présent, nous concentrons notre analyse sur les corrélations entre nos diff�
 
 ![image](https://github.com/Pierrepierrepierrepierrepierrepierre/projetSVM/assets/124379009/959f7e13-d62e-4cba-ac76-669bf127fe89)
 
-
 Étant donné qu’une matrice des corrélations classiques n’est pas très visible, nous en réalisons une ou seulement les corrélation supérieure à 0,65 sont affichées. 
 Nous obtenons donc 2 groupes de variables corrélées entre-elles, à savoir sulfure dioxyde libre et sulfure dioxyde total avec une corrélation de 0,74 ainsi que les variables densité et alcool qui sont corrélées à -0,7.
 
