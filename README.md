@@ -48,7 +48,7 @@ Le graphique ci dessus nous montre la répartition de deux types de vins. On obs
 
 
 
-![image](https://github.com/Pierrepierrepierrepierrepierrepierre/projetSVM/assets/124379009/a380df43-6cf3-4f8c-ac81-dcd54569aaa0)
+![image](https://github.com/Pierrepierrepierrepierrepierrepierre/projetSVM/assets/124379009/46a9e795-32e0-4e6a-b87d-540bf40d3ccc)
 
 Pour ce qui est de la variable qualité, nous avons préféré un histogramme en barre pour analyser la répartition. Les histogrammes en barres offrent une comparaison et une interprétation plus claires des fréquences lorsque l’on analyse des variables catégorielles. 
 Ainsi, nous observons une distribution asymétrique où la majorité des vins se concentrent autour des notes de qualité moyenne correspondant à une loi normale, ce qui est logique  puisque la plupart des vins reçoivent des notes moyennes et moins reçoivent des notes extrêmes.
