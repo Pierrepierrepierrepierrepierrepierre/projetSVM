@@ -405,6 +405,13 @@ En revanche, les caractéristiques en bas du graphique, telles que "quality_5" e
 # VI. Conclusion
 
 
+En conclusion, ce projet a démontré l'efficacité des machines à vecteurs de support (SVM) et des réseaux de neurones dans l'analyse et la prédiction de la qualité et du type de vin. À travers une exploration minutieuse de la base de données et l'application de techniques avancées de machine learning, nous avons réussi à établir des modèles prédictifs significatifs.
+
+Nos résultats montrent que les SVM et les réseaux de neurones peuvent être utilisés efficacement pour classer les vins en fonction de leurs caractéristiques. Cela non seulement aide à comprendre les facteurs qui influencent la qualité du vin, mais ouvre également la voie à des applications industrielles, telles que l'assurance qualité et la personnalisation des produits.
+
+Cependant, il est important de noter que notre étude a ses limites, notamment en termes de diversité des données et de la complexité des modèles. Des recherches futures pourraient explorer l'utilisation de données plus variées et l'intégration de méthodes plus sophistiquées pour affiner davantage les prédictions.
+
+Enfin, ce projet souligne le potentiel de l'intelligence artificielle dans le domaine de l'œnologie. En continuant à développer et à affiner ces technologies, nous pouvons espérer une meilleure compréhension et appréciation des nuances complexes qui définissent la qualité et le caractère unique de chaque vin.
 
 </div>
 
