@@ -172,8 +172,66 @@ Cependant, pour la variable type on note que la variable sulfure dioxyde total m
 
 
 
+Ensuite, nous procédons à la même analyse pour nos variables densité et alcool. Par rapport au type de vin.
+
+<img src="https://github.com/Pierrepierrepierrepierrepierrepierre/projetSVM/assets/124379009/1d33828c-19d7-496c-9a8a-4eebb6b7c71c" width="420"/> <img src="https://github.com/Pierrepierrepierrepierrepierrepierre/projetSVM/assets/124379009/1b7f6664-54eb-4182-b853-7387536c51bc" width="420"/>
 
 
-Ensuite, nous procédons à la même analyse pour nos variables densité et alcool. Par rapport au type de vin, on observe qu'il n'y a aucune différence pour la densité ainsi que pour la teneur en alcool. Nous nous intéressons alors à la variable. La densité ne semble pas non plus impacter la qualité d’un vin puisque l’on observe aucune différence de valeur par rapport aux notes de qualité. Par ailleurs, pour ce qui est de la teneur en alcool, on remarque assez facilement une augmentation progressive de celle-ci à mesure que la qualité augmente pour les notes supérieures à 5. Ainsi il semble plus pertinent de conserver la variable alcool pour nos modèles puisqu’elle permet de différencier davantage les vins que la variable densité qui s'avère moins intéressante en raison de sa faible variabilité en fonction du type et de la qualité. 
+on observe qu'il n'y a aucune différence pour la densité ainsi que pour la teneur en alcool. Nous nous intéressons alors à la variable qualité. 
+
+<img src="https://github.com/Pierrepierrepierrepierrepierrepierre/projetSVM/assets/124379009/6a94d0df-bf00-4162-b2c6-df7392b47a84" width="420"/> <img src="https://github.com/Pierrepierrepierrepierrepierrepierre/projetSVM/assets/124379009/75f3a62f-2e4e-4eee-8028-3ee2d47e3da2" width="420"/>
+
+
+La densité ne semble pas non plus impacter la qualité d’un vin puisque l’on observe aucune différence de valeur par rapport aux notes de qualité. Par ailleurs, pour ce qui est de la teneur en alcool, on remarque assez facilement une augmentation progressive de celle-ci à mesure que la qualité augmente pour les notes supérieures à 5. Ainsi il semble plus pertinent de conserver la variable alcool pour nos modèles puisqu’elle permet de différencier davantage les vins que la variable densité qui s'avère moins intéressante en raison de sa faible variabilité en fonction du type et de la qualité. 
+
+
+# Préparation de la BDD
+
+Suite à l'examen détaillé des variables individuelles et à l'étude des liens qu'elles entretiennent avec nos deux variables cibles, l'étape suivante consiste à affiner notre base de données. Cette phase de préparation implique un nettoyage, en effet,  les données manquantes seront écartées et les points atypiques, susceptibles de fausser nos modèles prédictifs, seront corrigées. Ainsi, notre base sera prête pour la construction de  différents modèles prédictifs.
+
+## Recodage des variables 
+
+Lors de la préparation des données pour un modèle de machine learning, il est crucial de convertir toutes les variables catégorielles en un format que le modèle peut comprendre. En général, les modèles de machine learning travaillent avec des données numériques, donc les étapes d'encodage transforment les informations catégorielles en nombres.
+
+Dans notre démarche, nous traitons deux types de variables catégorielles : une variable ordinale (`quality`) et une variable nominale (`type`).
+
+Pour la variable ordinale `quality`, qui représente une note de qualité du vin, nous attribuons à chaque catégorie un code numérique unique. Cela est fait dans le respect de l'ordre inhérent à la variable, où chaque niveau de qualité supérieur reçoit un numéro plus élevé que le niveau précédent. 
+
+Ensuite, pour la variable nominale `type`, nous utilisons deux approches d'encodage différentes. Tout d'abord, nous appliquons un encodage binaire, où chaque type de vin est représenté par un 0 ou un 1. Cette méthode est efficace lorsque la variable catégorielle a seulement deux catégories.
+
+Parallèlement à l'encodage binaire, nous appliquons également un encodage one-hot sur la même variable. Cela crée une nouvelle colonne pour chaque catégorie de la variable `type`, où la présence de chaque type de vin est indiquée par un 1 dans sa colonne respective et des 0 dans toutes les autres. Cette méthode est particulièrement utile lorsque la variable catégorielle comporte plus de deux catégories et où il n'y a pas d'ordre inhérent à considérer.
+
+Ces étapes d'encodage sont essentielles car elles permettent de transformer des données textuelles en signaux numériques qui préservent les informations catégorielles d'origine tout en les rendant interprétables par les algorithmes de machine learning. L'encodage one-hot est souvent préféré car il ne suppose aucune relation d'ordre entre les catégories, ce qui pourrait induire le modèle en erreur. Cependant, pour les variables ordinales, l'encodage ordinal est préférable car il conserve la hiérarchie des catégories. Choisir le bon type d'encodage pour chaque variable est donc une étape critique pour assurer la précision et l'efficacité des modèles prédictifs.
+
+## traitement des valeurs manquantes 
+
+A présent, il est important de traiter les valeurs manquantes. Pour ce faire on regarde le nombre d’outliers par variable et on obtient les résultats suivants.
+
+
+type                     0
+fixed acidity           10
+volatile acidity         8
+citric acid              3
+residual sugar           2
+chlorides                2
+total sulfur dioxide     0
+pH                       9
+sulphates                4
+alcohol                  0
+quality                  0
+
+Le nombre de valeurs manquantes est très faible donc il sera mieux de simplement les supprimer. Une imputation par la moyenne et la médiane aurait pu être réaliser mais cela n'est pas indispensable en raison de leur faible nombre dans notre dataset comme nous pouvons le constater avec le tableau suivant qui nous donne le pourcentage d’outliers par variables.
+
+type                    0.000000
+total sulfur dioxide    0.000000
+alcohol                 0.000000
+quality                 0.000000
+residual sugar          0.030783
+chlorides               0.030783
+citric acid             0.046175
+sulphates               0.061567
+volatile acidity        0.123134
+pH                      0.138525
+fixed acidity           0.153917
 
 
