@@ -245,9 +245,9 @@ Le nombre de valeurs manquantes est très faible donc il sera mieux de simplemen
 L'analyse des boxplots pour l'ensemble des variables numériques de notre jeu de données révèle la présence de valeurs aberrantes pour chaque variable. Cependant, l'hétérogénéité des échelles entre les différentes variables complique la visualisation précise et la comparaison directe de ces outliers. Pour remédier à cela et faciliter une interprétation plus claire, nous procéderons à la réalisation de boxplots par variables ayant une échelle comparable.
 
 <p float="left">
-  <img src="https://github.com/Pierrepierrepierrepierrepierrepierre/projetSVM/assets/124379009/ec271eca-b71d-407d-90b0-2cea9fe36e3a" width="33%"/>
-  <img src="https://github.com/Pierrepierrepierrepierrepierrepierre/projetSVM/assets/124379009/c953dd70-f816-42cc-ac04-dade37295dff" width="33%"/>
-  <img src="https://github.com/Pierrepierrepierrepierrepierrepierre/projetSVM/assets/124379009/a2439082-9f27-44d0-9ece-c71225fa05e4" width="33%"/>
+  <img src="https://github.com/Pierrepierrepierrepierrepierrepierre/projetSVM/assets/124379009/ec271eca-b71d-407d-90b0-2cea9fe36e3a" width="32%"/>
+  <img src="https://github.com/Pierrepierrepierrepierrepierrepierre/projetSVM/assets/124379009/c953dd70-f816-42cc-ac04-dade37295dff" width="32%"/>
+  <img src="https://github.com/Pierrepierrepierrepierrepierrepierre/projetSVM/assets/124379009/a2439082-9f27-44d0-9ece-c71225fa05e4" width="32%"/>
 </p>
 
 
