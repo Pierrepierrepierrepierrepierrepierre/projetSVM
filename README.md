@@ -12,9 +12,8 @@ Dans un deuxième temps, nous avons exploré les distributions et les corrélati
 
 # Description du dataset
 Nous avons exploité une base de données disponible sur le site Kaggle, spécialisée dans les caractéristiques et la qualité des vins rouges et blancs. Cette base de données, riche en informations, nous permet d'analyser en profondeur les différents aspects influençant la qualité du vin. La base de données initiale comprend des enregistrements sur un grand nombre de vins, couvrant diverses variables chimiques et physiques.
+
 ## 1. Description des variables
-
-
 
 | Caractéristique       | Description |
 |-----------------------|-------------|
@@ -31,3 +30,36 @@ Nous avons exploité une base de données disponible sur le site Kaggle, spécia
 | Sulphates             | Niveau de sulfates, influençant la fermentation et le goût du vin. |
 | Alcohol               | Le pourcentage d'alcool dans le vin. |
 | Quality               | La note de qualité attribuée au vin, sur une échelle de 0 à 10. |
+
+
+
+# Analyse exploratoire 
+## Analyse univariée
+
+Nous passons à présent à l'analyse exploratoire, nous allons éxaminer de plus près les caractéristiques distinctives de notre collection de vins à travers une analyse univariée, révélant les tendances et les nuances de leur composition et de leur qualité.
+
+
+### variables dépendantes
+
+
+
+
+![image](https://github.com/Pierrepierrepierrepierrepierrepierre/projetSVM/assets/124379009/c5827219-fb71-4ef8-988c-6ff1a03fd62d)
+
+
+Le graphique ci dessus nous montre la répartition de deux types de vins. On observe une répartition assez inégale, en effet, le vin blanc représente une part beaucoup plus importante, avec 75.39%, tandis que le vin rouge est moins fréquent à 24.61%.
+
+variable qualité : 
+Pour ce qui est de la variable qualité, nous avons préféré un histogramme en barre pour analyser la répartition. Les histogrammes en barres offrent une comparaison et une interprétation plus claires des fréquences lorsque l’on analyse des variables catégorielles. 
+
+Ainsi, nous observons une distribution asymétrique où la majorité des vins se concentrent autour des notes de qualité moyenne correspondant à une loi normale, ce qui est logique  puisque la plupart des vins reçoivent des notes moyennes et moins reçoivent des notes extrêmes.
+
+De ce fait, nous devrons procéder à un rééquilibrage des classes afin d’avoir des modèles pertinents  
+
+
+
+
+
+
+
+
