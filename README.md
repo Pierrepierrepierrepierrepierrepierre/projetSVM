@@ -134,7 +134,7 @@ Ainsi nous nous sommes demandé s’il ne fallait pas retirer les variables type
 
 ## Distribution des features
 
-![image](https://github.com/Pierrepierrepierrepierrepierrepierre/projetSVM/assets/124379009/7bfa72b3-a5e2-4daa-b582-e2c29c23d4a6)
+![image](https://github.com/Pierrepierrepierrepierrepierrepierre/projetSVM/assets/124379009/862e8913-4b0b-474f-bc11-b7c89ea14e12)
 
 L'analyse des caractéristiques des vins à travers des graphiques en violon révèle une hétérogénéité intéressante propre à la vinification. L'acidité fixe s'inscrit dans une distribution quasi normale, gravitant majoritairement autour de 7 à 8 g/dm³. Ainsi, si la plupart des vins suivent un standard, certains s'écartent de la norme avec des acidités nettement plus élevées.
 En ce qui concerne l'acidité volatile, la tendance est clairement orientée vers des valeurs faibles, bien que quelques vins se démarquent par des niveaux supérieurs.
