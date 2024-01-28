@@ -3,7 +3,10 @@
 # Projet SVM et Réseaux de neurones : prédiction qualité et type de vin
 
 
-![oenologie-quelles-differences-entre-un-vin-blanc-et-un-vin-rouge-istock-com-piranka-209-1537370769](https://github.com/Pierrepierrepierrepierrepierrepierre/projetSVM/assets/117682143/af589b39-1ba7-4e9b-95fb-86bda8b86ee1)
+<p align="center">
+  <img src="https://github.com/Pierrepierrepierrepierrepierrepierre/projetSVM/assets/117682143/6631788f-243c-4ca9-bbb0-cf1c898ca7c2" alt="White and Red Wine Glasses" width="400"/>
+</p>
+
 
 # I. Introducion
 
