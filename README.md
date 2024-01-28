@@ -162,9 +162,7 @@ Nous obtenons donc 2 groupes de variables corrélées entre-elles, à savoir sul
 Pour choisir quelles variables nous allons garder, nous nous intéressons aux diagrammes en barres de l’analyse bivariée. 
 Premièrement pour les variables liées au sulfure, on ne remarque pas de différences significatives entre les 2, par rapport à la variable qualité comme nous pouvons le voir sur le graphique ci-dessous
 
-![image](https://github.com/Pierrepierrepierrepierrepierrepierre/projetSVM/assets/124379009/ed4d08d2-6124-42b9-92b9-e8c5aea79d87)
-![image](https://github.com/Pierrepierrepierrepierrepierrepierre/projetSVM/assets/124379009/f76ba96e-6078-4cfe-95cf-bb3af8c99938)
-
+<img src="https://github.com/Pierrepierrepierrepierrepierrepierre/projetSVM/assets/124379009/ed4d08d2-6124-42b9-92b9-e8c5aea79d87" width="420"/> <img src="https://github.com/Pierrepierrepierrepierrepierrepierre/projetSVM/assets/124379009/f76ba96e-6078-4cfe-95cf-bb3af8c99938" width="420"/>
 
 Cependant, pour la variable type on note que la variable sulfure dioxyde total marque une plus grande différence par rapport au type de vin la rendant plus intéressante pour le déterminer par la suite dans nos modèles. Ainsi, c’est la variable que nous retiendrons.
 
@@ -208,30 +206,48 @@ Ces étapes d'encodage sont essentielles car elles permettent de transformer des
 A présent, il est important de traiter les valeurs manquantes. Pour ce faire on regarde le nombre d’outliers par variable et on obtient les résultats suivants.
 
 
-type                     0
-fixed acidity           10
-volatile acidity         8
-citric acid              3
-residual sugar           2
-chlorides                2
-total sulfur dioxide     0
-pH                       9
-sulphates                4
-alcohol                  0
-quality                  0
+| Feature              | Value |
+|----------------------|-------|
+| Type                 | 0     |
+| Fixed Acidity        | 10    |
+| Volatile Acidity     | 8     |
+| Citric Acid          | 3     |
+| Residual Sugar       | 2     |
+| Chlorides            | 2     |
+| Total Sulfur Dioxide | 0     |
+| pH                   | 9     |
+| Sulphates            | 4     |
+| Alcohol              | 0     |
+| Quality              | 0     |
+
 
 Le nombre de valeurs manquantes est très faible donc il sera mieux de simplement les supprimer. Une imputation par la moyenne et la médiane aurait pu être réaliser mais cela n'est pas indispensable en raison de leur faible nombre dans notre dataset comme nous pouvons le constater avec le tableau suivant qui nous donne le pourcentage d’outliers par variables.
 
-type                    0.000000
-total sulfur dioxide    0.000000
-alcohol                 0.000000
-quality                 0.000000
-residual sugar          0.030783
-chlorides               0.030783
-citric acid             0.046175
-sulphates               0.061567
-volatile acidity        0.123134
-pH                      0.138525
-fixed acidity           0.153917
+| Feature              | Value      |
+|----------------------|------------|
+| Type                 | 0.000000   |
+| Fixed Acidity        | 0.153917   |
+| Volatile Acidity     | 0.123134   |
+| Citric Acid          | 0.046175   |
+| Residual Sugar       | 0.030783   |
+| Chlorides            | 0.030783   |
+| Total Sulfur Dioxide | 0.000000   |
+| pH                   | 0.138525   |
+| Sulphates            | 0.061567   |
+| Alcohol              | 0.000000   |
+| Quality              | 0.000000   |
+
+
+## points atypiques 
+
+![image](https://github.com/Pierrepierrepierrepierrepierrepierre/projetSVM/assets/124379009/9766de5a-6831-433e-99f2-d55f1c7a8fba)
+
+L'analyse des boxplots pour l'ensemble des variables numériques de notre jeu de données révèle la présence de valeurs aberrantes pour chaque variable. Cependant, l'hétérogénéité des échelles entre les différentes variables complique la visualisation précise et la comparaison directe de ces outliers. Pour remédier à cela et faciliter une interprétation plus claire, nous procéderons à la réalisation de boxplots par variables ayant une échelle comparable.
+
+<p float="left">
+  <img src="https://github.com/Pierrepierrepierrepierrepierrepierre/projetSVM/assets/124379009/ec271eca-b71d-407d-90b0-2cea9fe36e3a" width="33%"/>
+  <img src="https://github.com/Pierrepierrepierrepierrepierrepierre/projetSVM/assets/124379009/c953dd70-f816-42cc-ac04-dade37295dff" width="33%"/>
+  <img src="https://github.com/Pierrepierrepierrepierrepierrepierre/projetSVM/assets/124379009/a2439082-9f27-44d0-9ece-c71225fa05e4" width="33%"/>
+</p>
 
 
