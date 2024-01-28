@@ -56,7 +56,7 @@ Ainsi, nous observons une distribution asymétrique où la majorité des vins se
 De ce fait, nous devrons procéder à un rééquilibrage des classes afin d’avoir des modèles pertinents  
 
 ### variables explicatives
-
+<div align="center">
 |       | Fixed Acidity | Volatile Acidity | Citric Acid | Residual Sugar | Chlorides | Free Sulfur Dioxide | Total Sulfur Dioxide | Density  | pH    | Sulphates | Alcohol | Quality |
 |-------|---------------|------------------|-------------|----------------|-----------|---------------------|----------------------|----------|-------|-----------|---------|---------|
 | Count | 6487.000000   | 6489.000000      | 6494.000000 | 6495.000000    | 6495.000000 | 6497.000000         | 6497.000000          | 6497.000000 | 6488.000000 | 6493.000000 | 6497.000000 | 6497.000000 |
@@ -67,7 +67,6 @@ De ce fait, nous devrons procéder à un rééquilibrage des classes afin d’av
 | 50%   | 7.000000      | 0.290000         | 0.310000    | 3.000000       | 0.047000  | 29.000000           | 118.000000           | 0.994890  | 3.210000  | 0.510000  | 10.300000 | 6.000000 |
 | 75%   | 7.700000      | 0.400000         | 0.390000    | 8.100000       | 0.065000  | 41.000000           | 156.000000           | 0.996990  | 3.320000  | 0.600000  | 11.300000 | 6.000000 |
 | Max   | 15.900000     | 1.580000         | 1.660000    | 65.800000      | 0.611000  | 289.000000          | 440.000000           | 1.038980  | 4.010000  | 2.000000  | 14.900000 | 9.000000 |
-
 
 
 Dans notre étude de plus de 6400 vins, nous avons remarqué quelques tendances intéressantes concernant leurs caractéristiques. Certains aspects des vins sont assez similaires d'une bouteille à l'autre, tandis que d'autres varient beaucoup.
@@ -404,6 +403,7 @@ En revanche, les caractéristiques en bas du graphique, telles que "quality_5" e
 
 
 
+</div>
 
 
 
