@@ -47,7 +47,7 @@ Nous passons à présent à l'analyse exploratoire, nous allons éxaminer de plu
 Le graphique ci dessus nous montre la répartition de deux types de vins. On observe une répartition assez inégale, en effet, le vin blanc représente une part beaucoup plus importante, avec 75.39%, tandis que le vin rouge est moins fréquent à 24.61%.
 
 
-![image](https://github.com/Pierrepierrepierrepierrepierrepierre/projetSVM/assets/124379009/8d17d4b3-d250-4f57-b818-cbadc35f43c6)
+![image](https://github.com/Pierrepierrepierrepierrepierrepierre/projetSVM/assets/124379009/10322cb0-422c-4ab6-ab05-944b64c8f84c)
 
 
 
