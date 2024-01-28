@@ -45,16 +45,34 @@ Nous passons à présent à l'analyse exploratoire, nous allons éxaminer de plu
 
 
 ![image](https://github.com/Pierrepierrepierrepierrepierrepierre/projetSVM/assets/124379009/c5827219-fb71-4ef8-988c-6ff1a03fd62d)
+![image](https://github.com/Pierrepierrepierrepierrepierrepierre/projetSVM/assets/124379009/533cd6d5-08a9-48db-89bc-f08ef4b98d22)
 
 
 Le graphique ci dessus nous montre la répartition de deux types de vins. On observe une répartition assez inégale, en effet, le vin blanc représente une part beaucoup plus importante, avec 75.39%, tandis que le vin rouge est moins fréquent à 24.61%.
 
-variable qualité : 
-Pour ce qui est de la variable qualité, nous avons préféré un histogramme en barre pour analyser la répartition. Les histogrammes en barres offrent une comparaison et une interprétation plus claires des fréquences lorsque l’on analyse des variables catégorielles. 
 
+
+![image](https://github.com/Pierrepierrepierrepierrepierrepierre/projetSVM/assets/124379009/a380df43-6cf3-4f8c-ac81-dcd54569aaa0)
+
+Pour ce qui est de la variable qualité, nous avons préféré un histogramme en barre pour analyser la répartition. Les histogrammes en barres offrent une comparaison et une interprétation plus claires des fréquences lorsque l’on analyse des variables catégorielles. 
 Ainsi, nous observons une distribution asymétrique où la majorité des vins se concentrent autour des notes de qualité moyenne correspondant à une loi normale, ce qui est logique  puisque la plupart des vins reçoivent des notes moyennes et moins reçoivent des notes extrêmes.
 
 De ce fait, nous devrons procéder à un rééquilibrage des classes afin d’avoir des modèles pertinents  
+
+### variables explicatives
+
+|       | Fixed Acidity | Volatile Acidity | Citric Acid | Residual Sugar | Chlorides | Free Sulfur Dioxide | Total Sulfur Dioxide | Density  | pH    | Sulphates | Alcohol | Quality |
+|-------|---------------|------------------|-------------|----------------|-----------|---------------------|----------------------|----------|-------|-----------|---------|---------|
+| Count | 6487.000000   | 6489.000000      | 6494.000000 | 6495.000000    | 6495.000000 | 6497.000000         | 6497.000000          | 6497.000000 | 6488.000000 | 6493.000000 | 6497.000000 | 6497.000000 |
+| Mean  | 7.216579      | 0.339691         | 0.318722    | 5.444326       | 0.056042  | 30.525319           | 115.744574           | 0.994697  | 3.218395  | 0.531215  | 10.491801 | 5.818378 |
+| Std   | 1.296750      | 0.164649         | 0.145265    | 4.758125       | 0.035036  | 17.749400           | 56.521855            | 0.002999  | 0.160748  | 0.148814  | 1.192712  | 0.873255 |
+| Min   | 3.800000      | 0.080000         | 0.000000    | 0.600000       | 0.009000  | 1.000000            | 6.000000             | 0.987110  | 2.720000  | 0.220000  | 8.000000  | 3.000000 |
+| 25%   | 6.400000      | 0.230000         | 0.250000    | 1.800000       | 0.038000  | 17.000000           | 77.000000            | 0.992340  | 3.110000  | 0.430000  | 9.500000  | 5.000000 |
+| 50%   | 7.000000      | 0.290000         | 0.310000    | 3.000000       | 0.047000  | 29.000000           | 118.000000           | 0.994890  | 3.210000  | 0.510000  | 10.300000 | 6.000000 |
+| 75%   | 7.700000      | 0.400000         | 0.390000    | 8.100000       | 0.065000  | 41.000000           | 156.000000           | 0.996990  | 3.320000  | 0.600000  | 11.300000 | 6.000000 |
+| Max   | 15.900000     | 1.580000         | 1.660000    | 65.800000      | 0.611000  | 289.000000          | 440.000000           | 1.038980  | 4.010000  | 2.000000  | 14.900000 | 9.000000 |
+
+
 
 
 
