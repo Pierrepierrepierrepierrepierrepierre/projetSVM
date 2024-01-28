@@ -1,21 +1,21 @@
 <div align="center">
   
-  # Projet SVM et Réseaux de neurones : prédiction qualité et type de vin
+# Projet SVM et Réseaux de neurones : prédiction qualité et type de vin
 
 
 ![oenologie-quelles-differences-entre-un-vin-blanc-et-un-vin-rouge-istock-com-piranka-209-1537370769](https://github.com/Pierrepierrepierrepierrepierrepierre/projetSVM/assets/117682143/af589b39-1ba7-4e9b-95fb-86bda8b86ee1)
 
-# Introducion
+# I. Introducion
 
 Dans le cadre de notre projet de Machine Learning et de Deep Learning, nous nous sommes lancés dans l'analyse approfondie d'une base de données portant sur la qualité et le type de vins. Cette base, récupérée sur le site de référence Kaggle et créé par un auteur du nom de Raj Parmar, inclut des informations détaillées sur un vaste éventail de vins, rouges comme blancs.
 Notre objectif est double : prédire la qualité du vin, évaluée sur une échelle de 0 à 10, et classifier le vin en tant que rouge ou blanc. Cette tâche s'appuie sur l'exploitation de divers paramètres chimiques et physiques des vins, tels que l'acidité, le sucre résiduel, les chlorures, le sulfite, la densité, le pH, les sulfates, et la teneur en alcool. 
 La première phase de notre projet a consisté en une compréhension approfondie de la base de données, suivie d'un nettoyage rigoureux et d'une préparation des données, incluant la gestion des valeurs manquantes et la création d'indicateurs pertinents. Cette étape essentielle a permis d'établir des fondations solides pour nos analyses et modélisations ultérieures.
 Dans un deuxième temps, nous avons exploré les distributions et les corrélations des variables explicatives avec la qualité et le type de vin. Cette analyse exploratoire est cruciale pour formuler des hypothèses sur les facteurs ayant une influence sur ces derniers. Finalement, nous avons développé et testé une série de modèles de prédiction visant à évaluer la qualité et à déterminer le type de vin. 
 
-# Description du dataset
+# II. Description du dataset
 Nous avons exploité une base de données disponible sur le site Kaggle, spécialisée dans les caractéristiques et la qualité des vins rouges et blancs. Cette base de données, riche en informations, nous permet d'analyser en profondeur les différents aspects influençant la qualité du vin. La base de données initiale comprend des enregistrements sur un grand nombre de vins, couvrant diverses variables chimiques et physiques.
 
-## 1. Description des variables
+## a) Description des variables
 
 | Caractéristique       | Description |
 |-----------------------|-------------|
@@ -35,13 +35,13 @@ Nous avons exploité une base de données disponible sur le site Kaggle, spécia
 
 
 
-# Analyse exploratoire 
-## Analyse univariée
+# III. Analyse exploratoire 
+## a) Analyse univariée
 
 Nous passons à présent à l'analyse exploratoire, nous allons éxaminer de plus près les caractéristiques distinctives de notre collection de vins à travers une analyse univariée, révélant les tendances et les nuances de leur composition et de leur qualité.
 
 
-### variables dépendantes
+### 1- variables dépendantes
 
 ![image](https://github.com/Pierrepierrepierrepierrepierrepierre/projetSVM/assets/124379009/533cd6d5-08a9-48db-89bc-f08ef4b98d22)
 
@@ -57,7 +57,7 @@ Ainsi, nous observons une distribution asymétrique où la majorité des vins se
 
 De ce fait, nous devrons procéder à un rééquilibrage des classes afin d’avoir des modèles pertinents  
 
-### variables explicatives
+### 2- variables explicatives
 
 |       | Fixed Acidity | Volatile Acidity | Citric Acid | Residual Sugar | Chlorides | Free Sulfur Dioxide | Total Sulfur Dioxide | Density  | pH    | Sulphates | Alcohol | Quality |
 |-------|---------------|------------------|-------------|----------------|-----------|---------------------|----------------------|----------|-------|-----------|---------|---------|
@@ -77,7 +77,7 @@ En revanche, le sucre résiduel, qui est le sucre restant après la fermentation
 D'autres caractéristiques comme l'acidité, le niveau de certains acides (comme l'acide citrique), les chlorures (qui influencent le goût salé), les sulfates (utilisés aussi pour la conservation) et l'alcool ont des valeurs plus équilibrées. 
 Pour conclure, notre étude montre qu'il y a beaucoup de similitudes dans certains aspects des vins, mais aussi une grande variété dans d'autres. Cela reflète la complexité du vin et la façon dont différents ingrédients et méthodes de fabrication peuvent influencer le goût final. 
 
-## Analyse bivariée
+## b) Analyse bivariée
 ### Variable qualité
 Nous n’allons pas réaliser cette analyse sur l’ensemble de nos variables, en effet, étant donné que nous avons 2 variables targets différentes, cela serait trop long. Ainsi, nous avons sélectionné 4 variables explicatives qui semblent pertinentes par rapport à nos variables qualité et type. Il s’agit des variables Alcool, Acidité Volatile, Sucre Résiduel et Chlorides. Ces variables ont été choisies car elles jouent un rôle crucial dans la détermination des caractéristiques sensorielles et de la conservation du vin.
 
@@ -99,7 +99,7 @@ Il n'y a pas de tendance claire reliant la qualité du vin au sucre résiduel; l
 On observe que les vins de qualité inférieure ont des concentrations plus élevées en chlorides, tandis que les vins de qualité supérieure ont tendance à en avoir moins. La concentration en chlorides diminue globalement à mesure que la qualité augmente. La variabilité des concentrations en chlorides semble diminuer également avec l'augmentation de la qualité, particulièrement visible pour les vins de qualité 9. Cela nous permet de dire que les vins mieux notés ont une composition plus cohérente en termes de chlorides.
 
 
-### Variable type
+### 1- Variable type
 
 ![image](https://github.com/Pierrepierrepierrepierrepierrepierre/projetSVM/assets/124379009/9b6e7b16-7045-4c84-bca8-23b210e15c80)
 
@@ -123,7 +123,7 @@ Enfin, pour le taux d’alcool contenu dans les vins, on ne remarque aucune diff
 
 Le graphique à barres présenté détaille la distribution des notes de qualité pour les deux catégories de vins. Il ressort que la note '5' est la plus commune pour les rouges, tandis que les blancs sont le plus souvent notés '6', révélant une qualité perçue légèrement meilleure pour ces derniers. Les données visuelles suggèrent que les vins blancs tendent à être évalués plus favorablement que les rouges comme en témoignent les barres plus élevées pour les notes '6', '7', et '8' par rapport aux vins rouges.
 
-## Test de Khi-II
+## c) Test de Khi-II
 
 Une étape clé est d'examiner la relation entre la qualité du vin et son type (rouge ou blanc) afin de vérifier qu’elles ne sont pas dépendantes.
 Pour cela, un test statistique de Chi2 a été utilisé, qui est un outil standard pour évaluer si deux variables catégorielles sont indépendantes l'une de l'autre ou non.
@@ -132,7 +132,7 @@ Ainsi nous nous sommes demandé s’il ne fallait pas retirer les variables type
 
 
 
-## Distribution des features
+## d) Distribution des features
 
 ![image](https://github.com/Pierrepierrepierrepierrepierrepierre/projetSVM/assets/124379009/862e8913-4b0b-474f-bc11-b7c89ea14e12)
 
@@ -147,7 +147,7 @@ Les sulfates, montrent aussi une inclinaison vers des valeurs basses, avec là e
 La teneur en alcool expose une distribution multimodale, reflétant la diversité des types de vins, des plus légers aux plus corsés, et des spécialités comme les vins fortifiés.
 Enfin, la qualité, bien que subjective, semble se concentrer dans une gamme moyenne (5 à 7), avec moins de vins atteignant des scores élevés.
 
-## Analyse multivariée
+## e) Analyse multivariée
 
 
 A présent, nous concentrons notre analyse sur les corrélations entre nos différentes variables afin d’éliminer les variables inutiles à notre modélisation  en raison de l’une multicolinéarité potentielle. Pour ce faire nous analysons la matrice des corrélation.
@@ -184,11 +184,11 @@ on observe qu'il n'y a aucune différence pour la densité ainsi que pour la ten
 La densité ne semble pas non plus impacter la qualité d’un vin puisque l’on observe aucune différence de valeur par rapport aux notes de qualité. Par ailleurs, pour ce qui est de la teneur en alcool, on remarque assez facilement une augmentation progressive de celle-ci à mesure que la qualité augmente pour les notes supérieures à 5. Ainsi il semble plus pertinent de conserver la variable alcool pour nos modèles puisqu’elle permet de différencier davantage les vins que la variable densité qui s'avère moins intéressante en raison de sa faible variabilité en fonction du type et de la qualité. 
 
 
-# Préparation de la BDD
+# IV. Préparation de la BDD
 
 Suite à l'examen détaillé des variables individuelles et à l'étude des liens qu'elles entretiennent avec nos deux variables cibles, l'étape suivante consiste à affiner notre base de données. Cette phase de préparation implique un nettoyage, en effet,  les données manquantes seront écartées et les points atypiques, susceptibles de fausser nos modèles prédictifs, seront corrigées. Ainsi, notre base sera prête pour la construction de  différents modèles prédictifs.
 
-## Recodage des variables 
+## a) Recodage des variables 
 
 Lors de la préparation des données pour un modèle de machine learning, il est crucial de convertir toutes les variables catégorielles en un format que le modèle peut comprendre. En général, les modèles de machine learning travaillent avec des données numériques, donc les étapes d'encodage transforment les informations catégorielles en nombres.
 
@@ -202,7 +202,7 @@ Parallèlement à l'encodage binaire, nous appliquons également un encodage one
 
 Ces étapes d'encodage sont essentielles car elles permettent de transformer des données textuelles en signaux numériques qui préservent les informations catégorielles d'origine tout en les rendant interprétables par les algorithmes de machine learning. L'encodage one-hot est souvent préféré car il ne suppose aucune relation d'ordre entre les catégories, ce qui pourrait induire le modèle en erreur. Cependant, pour les variables ordinales, l'encodage ordinal est préférable car il conserve la hiérarchie des catégories. Choisir le bon type d'encodage pour chaque variable est donc une étape critique pour assurer la précision et l'efficacité des modèles prédictifs.
 
-## traitement des valeurs manquantes 
+## b) traitement des valeurs manquantes 
 
 A présent, il est important de traiter les valeurs manquantes. Pour ce faire on regarde le nombre d’outliers par variable et on obtient les résultats suivants.
 
@@ -239,7 +239,7 @@ Le nombre de valeurs manquantes est très faible donc il sera mieux de simplemen
 | Quality              | 0.000000   |
 
 
-## points atypiques 
+## c) points atypiques 
 
 ![image](https://github.com/Pierrepierrepierrepierrepierrepierre/projetSVM/assets/124379009/9766de5a-6831-433e-99f2-d55f1c7a8fba)
 
@@ -257,10 +257,10 @@ Les boxplots des différentes variables du vin montrent une dispersion variable 
 Ainsi nous procédons à leurs corrections de la manière suivante. Pour ce faire, nous utilisons la fonction zscore de la bibliothèque scipy.stats pour identifier les valeurs atypiques. Cette fonction calcule le score z de chaque point de données, nous permettant de connaître leur éloignement de la moyenne en termes d'écart-types. Les valeurs avec un score z supérieur à 3 ou inférieur à -3 sont considérées atypiques. Nous nous basons sur la règle statistique que la majorité des données dans une distribution normale se trouvent dans cette plage. Nous pouvons donc retirer ces valeurs de notre dataframe et passer à la partie rééquilibrage.
 
 
-## Split
+## d) Split
 Cette étape consiste en la préparation des données pour le machine learning en séparant les caractéristiques et la cible, en divisant les données en ensembles d'entraînement et de test. Nous avons donc un ensemble test composé de 20% des valeurs et un ensemble train avec le reste de celles-ci. De plus, nous avons vérifié la cohérence de la division, nous avons donc 4782 observations pour l'entraînement et 1196 pour le test.
 
-## Rééquilibrage
+## e) Rééquilibrage
 
 Maintenant, il est essentiel de procéder au rééquilibrage de la variable cible 'type', qui est de nature binaire et est distribuée de manière inégale avec environ 20% de vins rouges contre 80% de vins blancs. Cette disproportion peut entraîner un biais significatif dans les performances de notre modèle, en le prédisposant à mieux reconnaître les vins blancs au détriment des rouges.
 
@@ -269,26 +269,26 @@ Pour remédier à cela, des techniques de rééquilibrage telles que le surécha
 En équilibrant la présence des deux classes de 'type' dans notre jeu de données d'entraînement, nous pouvons améliorer significativement la capacité du modèle à apprendre de manière équitable les caractéristiques de chaque type de vin. Cela permettra une amélioration de la précision globale du modèle et assurera que les prédictions soient aussi fiables pour les vins rouges que pour les vins blancs. 
 
 
-## Standardisation
+## f) Standardisation
 
 Vient à présent l’étape de standardisation de nos variables. Elle consiste en une technique de traitement des données pour rendre les variables plus comparables et donc plus adaptées à l'analyse. La standardisation transforme les données de manière à ce que leur moyenne soit égale à 0 et leur écart-type égal à 1. Cela est particulièrement utile lorsque les caractéristiques ont des échelles différentes comme c’est notre cas ici. Pour cela, nous avons utilisé la fonction StandardScaler de la bibliothèque scikit-learn.
 
 ![image](https://github.com/Pierrepierrepierrepierrepierrepierre/projetSVM/assets/124379009/27a1be4d-8f42-4554-a4e1-2a5f2c49f910)
 
-# Modélisation
+# V. Modélisation
 
 Maintenant que notre base est prête, nous pouvons passer à la réalisation des modèles. Nous allons tester différents modèles pour chaque analyse puis nous comparerons leur qualité à l’aide de différents indicateurs.
 
-## Analyse multiclasse 
+## a) Analyse multiclasse 
 Nous commençons par l’analyse multiclasse qui à pour but de prédire la note de qualité d’un vin.
 
-### Les modèles utilisés 
+### 1- Les modèles utilisés 
 
 Pour prédire la qualité du vin, nous avons utilisé plusieurs modèles, à savoir les approches One-vs-One (OvO), One-vs-Rest (OvR) et les réseaux de neurones.
 Le modèle OvO compare chaque paire de catégories pour mieux les distinguer, un peu comme si on comparait chaque type de vin deux par deux pour voir ce qui les différencie. Le modèle OvR, quant à lui, regarde chaque catégorie de vin séparément et la compare à toutes les autres en même temps. C'est une méthode plus simple et rapide, surtout quand il y a beaucoup de catégories de vins différentes à analyser.
 Nous avons également utilisé des réseaux de neurones pour évaluer la qualité du vin. Le réseau de neurones passe en revue toutes les informations sur chaque vin (l’ensemble de nos variables explicatives) et apprend à partir de ces données pour prédire sa qualité. 
 
-### Comparaison des modèles 
+### 2- Comparaison des modèles 
 Maintenant, nous pouvons passer à la comparaison des résultats obtenus pour ces différents modèles dans l’optique de sélectionner le meilleur. Nous commencerons par comparer les modèles ovo et ovr puis nous intégrerons le modèle de réseau de neurones à l'analyse.
 
 Nous avons réalisé une première validation croisée, en utilisant 5 subdivisions (folds), pour examiner nos 2 modèles différents. Le graphique présenté ci-dessous illustre le score de précision, qui correspond au ratio des classifications correctes sur le nombre total de classification pour chacune des 5 subdivisions.
@@ -309,16 +309,16 @@ Nous comparons maintenant ces métriques avec le modèle réseau de neurones et 
 
 Nous concluons donc que le modèle OVO semble offrir les meilleures performances, avec une précision relativement élevée et une meilleure capacité à classer correctement les échantillons par rapport aux modèles OVR et Réseau de Neurones. Le modèle OVR, bien qu'ayant une précision et un rappel inférieurs à OVO, surpasse légèrement le Réseau de Neurones en termes d'accuracy. Cependant, le Réseau de Neurones se trouve à la traîne avec des scores nettement inférieurs dans toutes les métriques, notamment en précision et en rappel, suggérant qu'il pourrait avoir du mal à gérer correctement les classifications dans ce cas spécifique.
 
-### Grid Search sur meilleurs modèles
+### 3- Grid Search sur meilleurs modèles
 
 Nous n'avons pas procédé à l'optimisation par grid search pour le meilleur modèle multiclasse, comme initialement prévu, car le processus s'est avéré être excessivement long et fastidieux à exécuter.
 
 
-## Analyse de classification binaire 
+## b) Analyse de classification binaire 
 
 Nous nous interessons maintenant à l’analyse binaire qui à pour but de prédire le type de vin.
 
-### Les modèles utilisés 
+### 1- Les modèles utilisés 
 
 Pour commencer cette partie, nous résumons succinctement chaque méthode utilisée : 
 
@@ -329,7 +329,7 @@ Classification à Vecteurs de Support (svc) : Utilise une marge maximale pour di
 Fonction de Base Radiale (rbf) et Noyau Polynomial (poly) : Deux fonctions de noyau pour SVM, traitant respectivement les relations non linéaires et complexes entre les caractéristiques.
 Nous utiliserons également un réseau de neurones pour cette analyse.
 
-### Comparaison des modèles 
+### 2- Comparaison des modèles 
 
 ![image](https://github.com/Pierrepierrepierrepierrepierrepierre/projetSVM/assets/124379009/dde84a0c-f0ed-4146-b4af-5ee4be727334)
 
@@ -345,6 +345,7 @@ Il est important de souligner que la précision fournit une évaluation de la pe
 | 5         | 0.9927268785167002      | 0.0015505065873888573      |
 
 En conclusion, les modèles rbf et poly se distinguent par leur performance, avec une légère avance pour le modèle poly, notamment dans les derniers folds. Bien que les autres modèles (lgr, lsvc, sgdc, svc) affichent une certaine variabilité, ils maintiennent une stabilité relative qui ne permet pas de surpasser les modèles rbf et poly. Concernant la stabilité, le modèle poly présente une légère supériorité par rapport au modèle rbf, le positionnant ainsi comme le meilleur sur l'ensemble des métriques analysées.
+
 Nous regardons à présent les métriques pour le réseaux de neurones et observons les résultats suivants ; 
 
 | Métrique  | Valeur                 |
@@ -354,14 +355,14 @@ Nous regardons à présent les métriques pour le réseaux de neurones et observ
 | Recall    | 0.9989406779661016     |
 | F1 Score  | 0.9963021658742736     |
 
-Le modèle a montré une excellente performance sur l'ensemble de validation, avec une exactitude remarquable de 99.41%, indiquant que presque toutes les prédictions étaient correctes. La précision était également très élevée à 99.37%, signifiant que la majorité des cas classés comme positifs étaient réellement positifs. Le rappel, à 99.89%, montre que le modèle a identifié avec succès presque tous les cas positifs réels. Le score F1 élevé de 99.63% révèle un équilibre parfait entre précision et rappel. La matrice de confusion confirme ces résultats avec un très faible nombre de faux positifs et un seul faux négatif, soulignant la fiabilité exceptionnelle du modèle dans ses prédictions faisant de lui celui que l’on retiendra comme notre meilleur modèle. au vu de son accuracy qui dépasse nos meilleurs modèles SVM.
+Le modèle a montré une excellente performance sur l'ensemble de validation, avec une exactitude remarquable de 99.41%, indiquant que presque toutes les prédictions étaient correctes. La précision était également très élevée à 99.37%, signifiant que la majorité des cas classés comme positifs étaient réellement positifs. Le rappel, à 99.89%, montre que le modèle a identifié avec succès presque tous les cas positifs réels. Le score F1 élevé de 99.63% révèle un équilibre parfait entre précision et rappel. La matrice de confusion confirme ces résultats avec un très faible nombre de faux positifs et un seul faux négatif, soulignant la fiabilité exceptionnelle du modèle dans ses prédictions faisant de lui celui que l’on retiendra comme notre meilleur modèle au vu de son accuracy qui dépasse nos meilleurs modèles SVM.
 
 
 faire une phrase pour expliquer pourquoi on gridsearch pas sur le rdn
 
 
 
-### Grid Search sur le meilleur modèle SVM
+### 3- Grid Search sur le meilleur modèle SVM
 
 
 L'approche GridSearch, souvent utilisée en apprentissage automatique, est une méthode pour sélectionner les meilleurs paramètres pour un modèle donné. Cette technique utilise la création d'une “grille" de paramètres possibles pour le modèle. Chaque combinaison de paramètres dans cette grille est ensuite évaluée et comparée.
@@ -390,7 +391,7 @@ Le modèle a démontré une excellente performance sur l'ensemble de test, attei
 
 
 
-### Importance des variables 
+### 4- Importance des variables 
 
 Pour finir cette analyse, il nous a semblé pertinent d’étudier l’importance des variables, pour ce faire nous avons utilisé une méthode de permutation.
 
@@ -401,7 +402,7 @@ La méthode de permutation permet d’évaluer l'importance des caractéristique
 En observant le graphique généré, nous pouvons interpréter l'importance des différentes caractéristiques dans la détermination du type de vin. Les caractéristiques situées vers le haut, avec des valeurs d'importance plus élevées sur l'axe des x, sont celles qui influencent le plus le modèle. Par exemple, les "chlorides" et le "total sulfur dioxide" semblent être des indicateurs très influents avec des boîtes s'étendant plus loin sur l'axe des x. Cela suggère qu'une permutation de ces valeurs a un impact notable sur la capacité du modèle à différencier les vins rouges des blancs.
 En revanche, les caractéristiques en bas du graphique, telles que "quality_5" et "quality_6", ont des boîtes qui sont très proches de l'origine sur l'axe des x, indiquant que la permutation de ces caractéristiques a peu ou pas d'effet sur la performance du modèle. Nous concluons donc que ces caractéristiques sont potentiellement moins importantes pour la prédiction du type de vin.
 
-# Conclusion
+# VI. Conclusion
 
 
 
