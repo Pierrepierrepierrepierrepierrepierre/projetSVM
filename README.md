@@ -58,7 +58,7 @@ Ainsi, nous observons une distribution asymétrique où la majorité des vins se
 De ce fait, nous devrons procéder à un rééquilibrage des classes afin d’avoir des modèles pertinents  
 
 ### variables explicatives
-<div align="center">
+
 |       | Fixed Acidity | Volatile Acidity | Citric Acid | Residual Sugar | Chlorides | Free Sulfur Dioxide | Total Sulfur Dioxide | Density  | pH    | Sulphates | Alcohol | Quality |
 |-------|---------------|------------------|-------------|----------------|-----------|---------------------|----------------------|----------|-------|-----------|---------|---------|
 | Count | 6487.000000   | 6489.000000      | 6494.000000 | 6495.000000    | 6495.000000 | 6497.000000         | 6497.000000          | 6497.000000 | 6488.000000 | 6493.000000 | 6497.000000 | 6497.000000 |
