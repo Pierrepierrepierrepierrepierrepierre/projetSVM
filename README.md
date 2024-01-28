@@ -405,13 +405,17 @@ En revanche, les caractéristiques en bas du graphique, telles que "quality_5" e
 # VI. Conclusion
 
 
-En conclusion, ce projet a démontré l'efficacité des machines à vecteurs de support (SVM) et des réseaux de neurones dans l'analyse et la prédiction de la qualité et du type de vin. À travers une exploration minutieuse de la base de données et l'application de techniques avancées de machine learning, nous avons réussi à établir des modèles prédictifs significatifs.
 
-Nos résultats montrent que les SVM et les réseaux de neurones peuvent être utilisés efficacement pour classer les vins en fonction de leurs caractéristiques. Cela non seulement aide à comprendre les facteurs qui influencent la qualité du vin, mais ouvre également la voie à des applications industrielles, telles que l'assurance qualité et la personnalisation des produits.
 
-Cependant, il est important de noter que notre étude a ses limites, notamment en termes de diversité des données et de la complexité des modèles. Des recherches futures pourraient explorer l'utilisation de données plus variées et l'intégration de méthodes plus sophistiquées pour affiner davantage les prédictions.
+En conclusion de notre projet sur la prédiction de la qualité et du type de vin, nous avons mis en œuvre une série de modèles de machine learning pour atteindre nos objectifs. Notre base de données, riche en caractéristiques physico-chimiques des vins, a été soigneusement préparée et nettoyée. 
 
-Enfin, ce projet souligne le potentiel de l'intelligence artificielle dans le domaine de l'œnologie. En continuant à développer et à affiner ces technologies, nous pouvons espérer une meilleure compréhension et appréciation des nuances complexes qui définissent la qualité et le caractère unique de chaque vin.
+Nous avons opté pour retirer les variables qui étaient trop corrélées entre-elles puisqu'elles n'étaient intéressante à impliquer toutes les deux dans nos modèles. Cependant, malgré la présence d'une dépendances entre variables qualité et type, nous avons décider de conserver les 2 afin d'optimiser la précision de nos modèles.
+
+Dans notre démarche, nous avons standardisé les variables quantitatives et transformé les variables qualitatives avec plus de deux modalités. Nous avons expérimenté avec divers algorithmes de classification binaire, incluant la régression logistique, plusieurs variantes de SVM (avec différents noyaux comme linéaire, polynomial, rbf) ainsi qu'un réseau de neurones. Pour évaluer et comparer ces modèles, nous avons réalisé une cross-validation à 5 plis, à l'exception du réseau de neurones, et avons examiné la précision moyenne obtenue.
+
+Au terme de nos analyses, nous avons constaté que le SVM avec noyau rbf et le réseau de neurones présentaient des performances similaires. Pour départager ces deux modèles, nous avons effectué une recherche sur grille (grid search) pour optimiser leurs hyper-paramètres. Finalement, le réseau de neurones a démontré une supériorité sur la majorité des indicateurs de performance, dont le recall, le f1-score et l'AUC.
+
+Ainsi, le réseau de neurones s'est avéré être le modèle le plus efficace pour prédire la qualité et le type de vin dans notre projet. Cette conclusion souligne l'importance d'une préparation minutieuse des données et de l'évaluation rigoureuse des modèles dans les projets de machine learning.
 
 </div>
 
