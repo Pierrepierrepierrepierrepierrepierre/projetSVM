@@ -177,7 +177,7 @@ Ensuite, nous procédons à la même analyse pour nos variables densité et alco
 
 on observe qu'il n'y a aucune différence pour la densité ainsi que pour la teneur en alcool. Nous nous intéressons alors à la variable qualité. 
 
-<img src="https://github.com/Pierrepierrepierrepierrepierrepierre/projetSVM/assets/124379009/6a94d0df-bf00-4162-b2c6-df7392b47a84" width="420"/> <img src="https://github.com/Pierrepierrepierrepierrepierrepierre/projetSVM/assets/124379009/75f3a62f-2e4e-4eee-8028-3ee2d47e3da2" width="420"/>
+<img src="https://github.com/Pierrepierrepierrepierrepierrepierre/projetSVM/assets/124379009/6a94d0df-bf00-4162-b2c6-df7392b47a84" width="49%"/> <img src="https://github.com/Pierrepierrepierrepierrepierrepierre/projetSVM/assets/124379009/75f3a62f-2e4e-4eee-8028-3ee2d47e3da2" width="49%"/>
 
 
 La densité ne semble pas non plus impacter la qualité d’un vin puisque l’on observe aucune différence de valeur par rapport aux notes de qualité. Par ailleurs, pour ce qui est de la teneur en alcool, on remarque assez facilement une augmentation progressive de celle-ci à mesure que la qualité augmente pour les notes supérieures à 5. Ainsi il semble plus pertinent de conserver la variable alcool pour nos modèles puisqu’elle permet de différencier davantage les vins que la variable densité qui s'avère moins intéressante en raison de sa faible variabilité en fonction du type et de la qualité. 
@@ -249,5 +249,6 @@ L'analyse des boxplots pour l'ensemble des variables numériques de notre jeu de
   <img src="https://github.com/Pierrepierrepierrepierrepierrepierre/projetSVM/assets/124379009/c953dd70-f816-42cc-ac04-dade37295dff" width="32%"/>
   <img src="https://github.com/Pierrepierrepierrepierrepierrepierre/projetSVM/assets/124379009/a2439082-9f27-44d0-9ece-c71225fa05e4" width="32%"/>
 </p>
+
 
 
