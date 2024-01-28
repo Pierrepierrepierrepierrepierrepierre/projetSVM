@@ -251,4 +251,39 @@ L'analyse des boxplots pour l'ensemble des variables numériques de notre jeu de
 </p>
 
 
+Les boxplots des différentes variables du vin montrent une dispersion variable des données, on peut noter une large variabilité pour les variables 'Residual sugar' et 'total sulfur dioxide' qui présentent une quantité notable d'outliers. Les autres variables, telles que 'fixed acidity', 'alcohol', 'volatile acidity', 'citric acid', 'chlorides', 'pH' et 'sulphates', affichent également des outliers, mais dans une moindre mesure.
+
+Ainsi nous procédons à leurs corrections de la manière suivante. Pour ce faire, nous utilisons la fonction zscore de la bibliothèque scipy.stats pour identifier les valeurs atypiques. Cette fonction calcule le score z de chaque point de données, nous permettant de connaître leur éloignement de la moyenne en termes d'écart-types. Les valeurs avec un score z supérieur à 3 ou inférieur à -3 sont considérées atypiques. Nous nous basons sur la règle statistique que la majorité des données dans une distribution normale se trouvent dans cette plage. Nous pouvons donc retirer ces valeurs de notre dataframe et passer à la partie rééquilibrage.
+
+
+## Split
+Cette étape consiste en la préparation des données pour le machine learning en séparant les caractéristiques et la cible, en divisant les données en ensembles d'entraînement et de test. Nous avons donc un ensemble test composé de 20% des valeurs et un ensemble train avec le reste de celles-ci. De plus, nous avons vérifié la cohérence de la division, nous avons donc 4782 observations pour l'entraînement et 1196 pour le test.
+
+## Rééquilibrage
+
+Maintenant, il est essentiel de procéder au rééquilibrage de la variable cible 'type', qui est de nature binaire et est distribuée de manière inégale avec environ 20% de vins rouges contre 80% de vins blancs. Cette disproportion peut entraîner un biais significatif dans les performances de notre modèle, en le prédisposant à mieux reconnaître les vins blancs au détriment des rouges.
+
+Pour remédier à cela, des techniques de rééquilibrage telles que le suréchantillonnage des vins rouges ou le sous-échantillonnage des vins blancs peuvent être employées. Le suréchantillonnage, par exemple, impliquerait de générer artificiellement des données supplémentaires pour les vins rouges, ou de dupliquer les échantillons existants, afin de compenser leur présence plus faible. En outre, le sous-échantillonnage réduirait le nombre d'échantillons de vins blancs pour équilibrer la répartition. Dans notre cas, nous avons appliqué un sur-échantillonnage à l’aide de la fonction RandomOverSampler.
+
+En équilibrant la présence des deux classes de 'type' dans notre jeu de données d'entraînement, nous pouvons améliorer significativement la capacité du modèle à apprendre de manière équitable les caractéristiques de chaque type de vin. Cela permettra une amélioration de la précision globale du modèle et assurera que les prédictions soient aussi fiables pour les vins rouges que pour les vins blancs. 
+
+
+## Standardisation
+
+Vient à présent l’étape de standardisation de nos variables. Elle consiste en une technique de traitement des données pour rendre les variables plus comparables et donc plus adaptées à l'analyse. La standardisation transforme les données de manière à ce que leur moyenne soit égale à 0 et leur écart-type égal à 1. Cela est particulièrement utile lorsque les caractéristiques ont des échelles différentes comme c’est notre cas ici. Pour cela, nous avons utilisé la fonction StandardScaler de la bibliothèque scikit-learn.
+
+![image](https://github.com/Pierrepierrepierrepierrepierrepierre/projetSVM/assets/124379009/27a1be4d-8f42-4554-a4e1-2a5f2c49f910)
+
+# Modélisation
+
+Maintenant que notre base est prête, nous pouvons passer à la réalisation des modèles. Nous allons tester différents modèles pour chaque analyse puis nous comparerons leur qualité à l’aide de différents indicateurs.
+
+## Analyse multiclasse 
+Nous commençons par l’analyse multiclasse qui à pour but de prédire la note de qualité d’un vin.
+
+### Les modèles utilisés 
+
+
+
+
 
