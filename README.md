@@ -148,15 +148,16 @@ Enfin, la qualité, bien que subjective, semble se concentrer dans une gamme moy
 
 ## Analyse multivariée
 
-![image](https://github.com/Pierrepierrepierrepierrepierrepierre/projetSVM/assets/124379009/e360b141-ea74-46ae-8b30-d48ba316b6a6)
 
 A présent, nous concentrons notre analyse sur les corrélations entre nos différentes variables afin d’éliminer les variables inutiles à notre modélisation  en raison de l’une multicolinéarité potentielle. Pour ce faire nous analysons la matrice des corrélation.
 
-![image](https://github.com/Pierrepierrepierrepierrepierrepierre/projetSVM/assets/124379009/959f7e13-d62e-4cba-ac76-669bf127fe89)
+
+![image](https://github.com/Pierrepierrepierrepierrepierrepierre/projetSVM/assets/124379009/e360b141-ea74-46ae-8b30-d48ba316b6a6)
 
 Étant donné qu’une matrice des corrélations classiques n’est pas très visible, nous en réalisons une ou seulement les corrélation supérieure à 0,65 sont affichées. 
 Nous obtenons donc 2 groupes de variables corrélées entre-elles, à savoir sulfure dioxyde libre et sulfure dioxyde total avec une corrélation de 0,74 ainsi que les variables densité et alcool qui sont corrélées à -0,7.
 
+![image](https://github.com/Pierrepierrepierrepierrepierrepierre/projetSVM/assets/124379009/aabe1c2e-6016-4cab-be90-8f66896ae1db)
 
 Pour choisir quelles variables nous allons garder, nous nous intéressons aux diagrammes en barres de l’analyse bivariée. 
 Premièrement pour les variables liées au sulfure, on ne remarque pas de différences significatives entre les 2, par rapport à la variable qualité comme nous pouvons le voir sur le graphique ci-dessous
