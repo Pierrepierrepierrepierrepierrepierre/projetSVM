@@ -59,8 +59,7 @@ Le graphique ci dessus nous montre la répartition de deux types de vins. On obs
 <div align="center">
 
 
-![image](https://github.com/Pierrepierrepierrepierrepierrepierre/projetSVM/raw/main/assets/124379009/3e9c5104-602d-453d-9883-80a1c8d9f984)
-
+<img width="452" alt="Capture d’écran 2024-01-29 135751" src="https://github.com/Pierrepierrepierrepierrepierrepierre/projetSVM/assets/124379009/aa31ac83-fcd7-4edb-9a11-499025b88127">
 
  
 </div>
