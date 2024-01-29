@@ -2,14 +2,15 @@
   
 # Projet SVM et Réseaux de neurones : prédiction qualité et type de vin
 
+</div>
 
 <p align="center">
   <img src="https://github.com/Pierrepierrepierrepierrepierrepierre/projetSVM/assets/117682143/6631788f-243c-4ca9-bbb0-cf1c898ca7c2" alt="White and Red Wine Glasses" width="400"/>
 </p>
 
-</div>
 
-# I. Introducion
+
+# I. Introduction
 
 Dans le cadre de notre projet de Machine Learning et de Deep Learning, nous nous sommes lancés dans l'analyse approfondie d'une base de données portant sur la qualité et le type de vins. Cette base, récupérée sur le site de référence Kaggle et créé par un auteur du nom de Raj Parmar, inclut des informations détaillées sur un vaste éventail de vins, rouges comme blancs.
 Notre objectif est double : prédire la qualité du vin, évaluée sur une échelle de 0 à 10, et classifier le vin en tant que rouge ou blanc. Cette tâche s'appuie sur l'exploitation de divers paramètres chimiques et physiques des vins, tels que l'acidité, le sucre résiduel, les chlorures, le sulfite, la densité, le pH, les sulfates, et la teneur en alcool. 
@@ -90,20 +91,36 @@ Pour conclure, notre étude montre qu'il y a beaucoup de similitudes dans certai
 ### Variable qualité
 Nous n’allons pas réaliser cette analyse sur l’ensemble de nos variables, en effet, étant donné que nous avons 2 variables targets différentes, cela serait trop long. Ainsi, nous avons sélectionné 4 variables explicatives qui semblent pertinentes par rapport à nos variables qualité et type. Il s’agit des variables Alcool, Acidité Volatile, Sucre Résiduel et Chlorides. Ces variables ont été choisies car elles jouent un rôle crucial dans la détermination des caractéristiques sensorielles et de la conservation du vin.
 
+<div align="center">
+  
 ![image](https://github.com/Pierrepierrepierrepierrepierrepierre/projetSVM/assets/124379009/fec01362-5124-4e47-8a8f-087a061ea038)
+
+</div>
 
 Le graphique montre que les vins de meilleure qualité tendent à avoir une teneur en alcool plus élevée, avec une augmentation progressive de l'alcool allant des vins de qualité inférieure aux vins de qualité supérieure. Il y a cependant une exception à cette tendance avec les vins notés 6, qui ont une teneur en alcool légèrement plus basse que ceux notés 5. Les barres d'erreur indiquent une variabilité similaire dans la teneur en alcool à travers les différentes qualités de vin, à l'exception des vins de qualité 9, qui montrent une plus grande variabilité.
 
+<div align="center">
+
 ![image](https://github.com/Pierrepierrepierrepierrepierrepierre/projetSVM/assets/124379009/a7a03a00-13a0-4ba0-9f3f-8d5adf0aa716)
+
+</div>
 
 Le graphique indique que les vins de qualité supérieure ont généralement une acidité volatile plus basse. On observe également une certaine stagnation à partir des vins ayant une qualité supérieure à 5. Ainsi, une acidité volatile élevée serait gage de mauvais vin, alors qu’une acidité volatile plutôt faible ne nous permettrait pas de statuer entre un moyen ou un bon vin.
 Cependant, les vins avec les notes de qualité les plus élevées et les plus basses montrent une plus grande variabilité dans l'acidité volatile que ceux de qualité moyenne. Cela suggère que l'acidité volatile est un indicateur clé de la qualité, où moins d'acidité volatile correspond à une meilleure qualité perçue.
 
+<div align="center">
+
 ![image](https://github.com/Pierrepierrepierrepierrepierrepierre/projetSVM/assets/124379009/b3fb1370-60d4-4412-8a2a-070a79fbcdb2)
+
+</div>
 
 Il n'y a pas de tendance claire reliant la qualité du vin au sucre résiduel; les vins de qualité moyenne et supérieure ont des niveaux de sucre résiduel similaires. On note une grande variabilité dans le sucre résiduel pour les vins de toutes les qualités, en particulier pour les vins notés 9, indiquant que la douceur peut varier considérablement au sein d'une même catégorie de qualité. Ainsi, on peut conclure que le sucre résiduel n'est pas un indicateur direct de la qualité du vin.
 
+<div align="center">
+
 ![image](https://github.com/Pierrepierrepierrepierrepierrepierre/projetSVM/assets/124379009/5a5cfccc-ccf0-4f4e-8df6-bbbc2960d3c1)
+
+</div>
 
 On observe que les vins de qualité inférieure ont des concentrations plus élevées en chlorides, tandis que les vins de qualité supérieure ont tendance à en avoir moins. La concentration en chlorides diminue globalement à mesure que la qualité augmente. La variabilité des concentrations en chlorides semble diminuer également avec l'augmentation de la qualité, particulièrement visible pour les vins de qualité 9. Cela nous permet de dire que les vins mieux notés ont une composition plus cohérente en termes de chlorides.
 
