@@ -58,9 +58,10 @@ Le graphique ci dessus nous montre la répartition de deux types de vins. On obs
 
 <div align="center">
 
-![image](https://github.com/Pierrepierrepierrepierrepierrepierre/projetSVM/raw/main/assets/124379009/3e9c5104-602d-453d-9883-80a1c8d9f984){width=400px}
+ <img src="https://github.com/Pierrepierrepierrepierrepierrepierre/projetSVM/raw/main/assets/124379009/3e9c5104-602d-453d-9883-80a1c8d9f984" alt="White and Red Wine Glasses" width="400"/>
 
 
+ 
 </div>
 
 Pour ce qui est de la variable qualité, nous avons préféré un histogramme en barre pour analyser la répartition. Les histogrammes en barres offrent une comparaison et une interprétation plus claires des fréquences lorsque l’on analyse des variables catégorielles. 
@@ -185,7 +186,11 @@ Ainsi nous nous sommes demandé s’il ne fallait pas retirer les variables type
 
 <div align="center">
 
-![image](https://github.com/Pierrepierrepierrepierrepierrepierre/projetSVM/assets/124379009/05ec7045-f963-49bf-a53c-93c55d749d06){width=400px}
+
+ <img src="[https://github.com/Pierrepierrepierrepierrepierrepierre/projetSVM/assets/117682143/6631788f-243c-4ca9-bbb0-cf1c898ca7c2](https://github.com/Pierrepierrepierrepierrepierrepierre/projetSVM/assets/124379009/05ec7045-f963-49bf-a53c-93c55d749d06)"  width="400"/>
+
+
+
 </div>
 
 L'analyse des caractéristiques des vins à travers des graphiques en violon révèle une hétérogénéité intéressante propre à la vinification. L'acidité fixe s'inscrit dans une distribution quasi normale, gravitant majoritairement autour de 7 à 8 g/dm³. Ainsi, si la plupart des vins suivent un standard, certains s'écartent de la norme avec des acidités nettement plus élevées.
