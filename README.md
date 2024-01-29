@@ -58,8 +58,7 @@ Le graphique ci dessus nous montre la répartition de deux types de vins. On obs
 
 <div align="center">
 
-![image](https://github.com/Pierrepierrepierrepierrepierrepierre/projetSVM/assets/124379009/795a66fb-32c6-435d-b489-ab51adc7f670)
-
+![output](https://github.com/Pierrepierrepierrepierrepierrepierre/projetSVM/assets/124379009/1caa9dc4-8314-4313-b9ac-5676071e9a08)
 </div>
 
 Pour ce qui est de la variable qualité, nous avons préféré un histogramme en barre pour analyser la répartition. Les histogrammes en barres offrent une comparaison et une interprétation plus claires des fréquences lorsque l’on analyse des variables catégorielles. 
