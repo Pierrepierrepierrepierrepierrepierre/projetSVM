@@ -259,17 +259,13 @@ Suite à l'examen détaillé des variables individuelles et à l'étude des lien
 
 ## a) Recodage des variables 
 
-Lors de la préparation des données pour un modèle de machine learning, il est crucial de convertir toutes les variables catégorielles en un format que le modèle peut comprendre. En général, les modèles de machine learning travaillent avec des données numériques, donc les étapes d'encodage transforment les informations catégorielles en nombres.
+Lors de la préparation des données pour un modèle de machine learning, il est essentiel de convertir toutes les variables catégorielles dans un format compréhensible par le modèle. En général, les modèles de machine learning requièrent des données numériques, et donc les étapes d'encodage sont utilisées pour transformer les informations catégorielles en valeurs numériques.
 
-Dans notre démarche, nous traitons deux types de variables catégorielles : une variable ordinale (`quality`) et une variable nominale (`type`).
+Dans notre approche, nous traitons deux types de variables catégorielles : une variable ordinale (`quality`) et une variable nominale (`type`).
 
-Pour la variable ordinale `quality`, qui représente une note de qualité du vin, nous attribuons à chaque catégorie un code numérique unique. Cela est fait dans le respect de l'ordre inhérent à la variable, où chaque niveau de qualité supérieur reçoit un numéro plus élevé que le niveau précédent. 
+Pour les modèles où la variable cible est 'quality', représentant la note de qualité du vin, nous attribuons à chaque catégorie un code numérique unique respectant l'ordre inhérent à la variable. Ainsi, chaque niveau de qualité supérieur reçoit un numéro plus élevé que le niveau précédent. En ce qui concerne la variable 'type', qui est une feature, nous utilisons un encodage one-hot. Cela crée une nouvelle colonne pour chaque catégorie de la variable `type`, générant ainsi deux nouvelles variables : 'type_white' et 'type_red'.
 
-Ensuite, pour la variable nominale `type`, nous utilisons deux approches d'encodage différentes. Tout d'abord, nous appliquons un encodage binaire, où chaque type de vin est représenté par un 0 ou un 1. Cette méthode est efficace lorsque la variable catégorielle a seulement deux catégories.
-
-Parallèlement à l'encodage binaire, nous appliquons également un encodage one-hot sur la même variable. Cela crée une nouvelle colonne pour chaque catégorie de la variable `type`, où la présence de chaque type de vin est indiquée par un 1 dans sa colonne respective et des 0 dans toutes les autres. Cette méthode est particulièrement utile lorsque la variable catégorielle comporte plus de deux catégories et où il n'y a pas d'ordre inhérent à considérer.
-
-Ces étapes d'encodage sont essentielles car elles permettent de transformer des données textuelles en signaux numériques qui préservent les informations catégorielles d'origine tout en les rendant interprétables par les algorithmes de machine learning. L'encodage one-hot est souvent préféré car il ne suppose aucune relation d'ordre entre les catégories, ce qui pourrait induire le modèle en erreur. Cependant, pour les variables ordinales, l'encodage ordinal est préférable car il conserve la hiérarchie des catégories. Choisir le bon type d'encodage pour chaque variable est donc une étape critique pour assurer la précision et l'efficacité des modèles prédictifs.
+Ensuite, pour les modèles où la variable cible est `type`, nous appliquons un encodage binaire à l'aide du LabelEncoder. Chaque type de vin est représenté par 0 ou 1, où la valeur 1 correspond au vin blanc et la valeur 0 correspond au vin rouge. De plus, pour la variable 'quality', qui est une feature de notre modèle, nous utilisons un encodage one-hot, créant ainsi une nouvelle variable pour chaque niveau de qualité.
 
 ## b) traitement des valeurs manquantes 
 
