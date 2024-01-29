@@ -186,7 +186,7 @@ Ainsi nous nous sommes demandé s’il ne fallait pas retirer les variables type
 
 <div align="center">
 
-<img width="173" alt="Capture d’écran 2024-01-29 135501" src="https://github.com/Pierrepierrepierrepierrepierrepierre/projetSVM/assets/124379009/aa32d2bf-2e15-4783-9e3e-e27a1c606e45">
+![outputviolin](https://github.com/Pierrepierrepierrepierrepierrepierre/projetSVM/assets/124379009/d37ad49c-195f-45f4-acea-6a577c0e09ad)
 
 </div>
 
