@@ -275,6 +275,8 @@ Ensuite, pour les modèles où la variable cible est `type`, nous appliquons un 
 
 A présent, il est important de traiter les valeurs manquantes. Pour ce faire on regarde le nombre d’outliers par variable et on obtient les résultats suivants.
 
+<div align="center">
+
 
 | Feature              | Value |
 |----------------------|-------|
@@ -289,6 +291,8 @@ A présent, il est important de traiter les valeurs manquantes. Pour ce faire on
 | Sulphates            | 4     |
 | Alcohol              | 0     |
 | Quality              | 0     |
+
+</div>
 
 
 Le nombre de valeurs manquantes est très faible donc il sera mieux de simplement les supprimer. Une imputation par la moyenne et la médiane aurait pu être réaliser mais cela n'est pas indispensable en raison de leur faible nombre dans notre dataset comme nous pouvons le constater avec le tableau suivant qui nous donne le pourcentage d’outliers par variables.
@@ -400,8 +404,6 @@ Nous inclurons également un réseau neuronal dans cette analyse. Sa spécificat
 
 </div>
 
-Il est important de souligner que la précision fournit une évaluation de la performance globale d'un modèle sur un ensemble de données, par ailleurs, la stabilité indique la constance de cette performance sur différents ensembles de données ou situations. Un modèle optimal allie donc une haute précision à une grande stabilité, assurant ainsi des prédictions fiables et régulières.
-
 <div align="center">
 
 
@@ -416,7 +418,7 @@ Il est important de souligner que la précision fournit une évaluation de la pe
 
 </div>
 
-En conclusion, les modèles rbf et poly se distinguent par leur performance, avec une légère avance pour le modèle poly, notamment dans les derniers folds. Bien que les autres modèles (lgr, lsvc, sgdc, svc) affichent une certaine variabilité, ils maintiennent une stabilité relative qui ne permet pas de surpasser les modèles rbf et poly. Concernant la stabilité, le modèle poly présente une légère supériorité par rapport au modèle rbf, le positionnant ainsi comme le meilleur sur l'ensemble des métriques analysées.
+En somme, les modèles rbf et poly se distinguent par leur performance, avec une légère avance pour le modèle poly, notamment dans les derniers folds. Bien que les autres modèles (lgr, lsvc, sgdc, svc) affichent une certaine variabilité, ils maintiennent une stabilité relative qui ne permet pas de surpasser les modèles rbf et poly. Concernant la stabilité, le modèle poly présente une légère supériorité par rapport au modèle rbf, le positionnant ainsi comme le meilleur sur l'ensemble des métriques analysées.
 
 Nous regardons à présent les métriques pour le réseaux de neurones et observons les résultats suivants ; 
 
@@ -432,9 +434,7 @@ Nous regardons à présent les métriques pour le réseaux de neurones et observ
 </div>
 
 
-
-Le modèle a montré une excellente performance sur l'ensemble de validation, avec une exactitude remarquable de 99.41%, indiquant que presque toutes les prédictions étaient correctes. La précision était également très élevée à 99.37%, signifiant que la majorité des cas classés comme positifs étaient réellement positifs. Le rappel, à 99.89%, montre que le modèle a identifié avec succès presque tous les cas positifs réels. Le score F1 élevé de 99.63% révèle un équilibre parfait entre précision et rappel. La matrice de confusion confirme ces résultats avec un très faible nombre de faux positifs et un seul faux négatif, soulignant la fiabilité exceptionnelle du modèle dans ses prédictions faisant de lui celui que l’on retiendra comme notre meilleur modèle au vu de son accuracy qui dépasse nos meilleurs modèles SVM.
-
+Le modèle a montré une excellente performance sur l'ensemble de validation, avec une accuracy remarquable de 99.41%, indiquant que presque toutes les prédictions étaient correctes. La précision était également très élevée à 99.37%, signifiant que la majorité des cas classés comme positifs étaient réellement positifs. Le rappel, à 99.89%, montre que le modèle a identifié avec succès presque tous les cas positifs réels. Le score F1 élevé de 99.63% révèle un équilibre parfait entre précision et rappel. La matrice de confusion confirme ces résultats avec un très faible nombre de faux positifs et un seul faux négatif.
 
 
 Ensuite, nous avons tenté d'ajuster les paramètres de notre réseau de neurones. Malheureusement, nous avons rencontré plusieurs difficultés sans parvenir à trouver de solution. L'erreur qui est apparue concerne la fonction de perte que nous avons spécifiée comme étant 'binary_crossentropy'. Malgré nos efforts avec différentes approches, nous n'avons pas obtenu les résultats escomptés. En conséquence, nous allons effectuer une recherche par grille sur notre meilleur modèle SVM pour évaluer s'il permet d'améliorer nos prédictions et comment il classe notre variable cible.
@@ -447,42 +447,50 @@ L'approche GridSearch, souvent utilisée en apprentissage automatique, est une m
 Dans les modèles SVM, C et gamma sont des paramètres permettant l’ajustement du modèle. Le paramètre C contrôle la régularisation et influence la complexité du modèle. Une valeur plus faible de C mène à une simplification du modèle, limitant le surajustement mais risquant le sous-ajustement, tandis qu'une valeur élevée permet une meilleure adaptation aux données d'entraînement mais avec un risque accru de surajustement. 
 D'autre part, gamma détermine l'impact de chaque point de données sur la formation du modèle. Un gamma élevé augmente l'influence de chaque point, menant potentiellement à un modèle trop spécifique aux données d'entraînement (surajustement), alors qu'un gamma faible diminue cette influence, favorisant ainsi la généralisation du modèle.
 
+<div align="center">
 
 | Paramètre | Valeur |
 |-----------|--------|
 | C         | 10     |
 | gamma     | 0.1    |
 
+</div> 
+
 
 Cela indique, comme dit précédemment qu'une régularisation modérée combinée à une influence relativement faible de chaque point de données produit les meilleurs résultats pour notre modèle. Regardons à présent l’évolution des métriques.
 
+<div align="center">
 
 | Metric    | Class 0 | Class 1 |
 |-----------|---------|---------|
 | Precision | 0.99    | 0.99    |
 | Recall    | 0.97    | 1.00    |
 | F1-score  | 0.98    | 0.99    |
-| Support   | 252     | 944     |
+
+</div>
 
 
 Le modèle a démontré une excellente performance sur l'ensemble de test, atteignant une exactitude globale de 99.16%. Dans le détail, pour la classe 0, il a montré une précision de 99%, un rappel de 97%, et un score F1 de 98%, indiquant une grande précision et une bonne capacité à identifier correctement cette classe. Pour la classe 1, le modèle a été encore plus performant, avec une précision et un rappel de 99% et 100% respectivement, aboutissant à un score F1 de 99%. Ces résultats soulignent non seulement la capacité du modèle à distinguer avec précision les deux classes, mais aussi son équilibre remarquable entre précision et rappel, comme reflété dans les scores F1 élevés et les moyennes globales proches de 99%.
 
 
 
-### 4- Importance des variables 
+### 4- Importance des features
 
 Pour finir cette analyse, il nous a semblé pertinent d’étudier l’importance des variables, pour ce faire nous avons utilisé une méthode de permutation.
 
-La méthode de permutation permet d’évaluer l'importance des caractéristiques dans un modèle SVM. Pour ce faire, on mélange aléatoirement les valeurs d'une caractéristique dans l'ensemble de test et observe l'effet sur la performance du modèle. Une baisse notable de la performance après la permutation indique que la caractéristique est importante. En répétant cette opération plusieurs fois et en moyennant les résultats, on obtient une estimation fiable de l'importance de chaque caractéristique. Le graphique à boîtes illustre cette importance, permettant d'identifier rapidement les caractéristiques essentielles au modèle.
+La méthode de permutation permet d’évaluer l'importance des caractéristiques dans un modèle SVM. Pour ce faire, on mélange aléatoirement les valeurs d'une caractéristique dans l'ensemble de test et observe l'effet sur la performance du modèle. Une baisse notable de la performance après la permutation indique que la caractéristique est importante. En répétant cette opération plusieurs fois et en moyennant les résultats, on obtient une estimation fiable de l'importance de chaque features. Le graphique à boîtes illustre cette importance, permettant d'identifier rapidement les caractéristiques essentielles au modèle.
+
+<div align="center">
 
 ![image](https://github.com/Pierrepierrepierrepierrepierrepierre/projetSVM/assets/124379009/7df308b3-c7a7-4c65-83b6-39b5c4a5a94a)
+
+</div> 
 
 En observant le graphique généré, nous pouvons interpréter l'importance des différentes caractéristiques dans la détermination du type de vin. Les caractéristiques situées vers le haut, avec des valeurs d'importance plus élevées sur l'axe des x, sont celles qui influencent le plus le modèle. Par exemple, les "chlorides" et le "total sulfur dioxide" semblent être des indicateurs très influents avec des boîtes s'étendant plus loin sur l'axe des x. Cela suggère qu'une permutation de ces valeurs a un impact notable sur la capacité du modèle à différencier les vins rouges des blancs.
 En revanche, les caractéristiques en bas du graphique, telles que "quality_5" et "quality_6", ont des boîtes qui sont très proches de l'origine sur l'axe des x, indiquant que la permutation de ces caractéristiques a peu ou pas d'effet sur la performance du modèle. Nous concluons donc que ces caractéristiques sont potentiellement moins importantes pour la prédiction du type de vin.
 
+
 # VI. Conclusion
-
-
 
 
 En conclusion de notre projet sur la prédiction de la qualité et du type de vin, nous avons mis en œuvre une série de modèles de machine learning pour atteindre nos objectifs. Notre base de données, riche en caractéristiques physico-chimiques des vins, a été soigneusement préparée et nettoyée. 
