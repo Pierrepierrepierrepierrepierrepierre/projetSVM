@@ -292,13 +292,6 @@ Le nombre de valeurs manquantes est très faible donc il sera mieux de simplemen
 
 ## c) points atypiques 
 
-<div align="center">
-
-
-![image](https://github.com/Pierrepierrepierrepierrepierrepierre/projetSVM/assets/124379009/9766de5a-6831-433e-99f2-d55f1c7a8fba)
-
-</div>
-
 
 L'analyse des boxplots pour l'ensemble des variables numériques de notre jeu de données révèle la présence de valeurs aberrantes pour chaque variable. Cependant, l'hétérogénéité des échelles entre les différentes variables complique la visualisation précise et la comparaison directe de ces outliers. Pour remédier à cela et faciliter une interprétation plus claire, nous procéderons à la réalisation de boxplots par variables ayant une échelle comparable.
 
