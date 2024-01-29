@@ -192,17 +192,7 @@ Ainsi nous nous sommes demandé s’il ne fallait pas retirer les variables type
 ![outputviolin](https://github.com/Pierrepierrepierrepierrepierrepierre/projetSVM/assets/124379009/d37ad49c-195f-45f4-acea-6a577c0e09ad)
 
 </div>
-
-L'analyse des caractéristiques des vins à travers des graphiques en violon révèle une hétérogénéité intéressante propre à la vinification. L'acidité fixe s'inscrit dans une distribution quasi normale, gravitant majoritairement autour de 7 à 8 g/dm³. Ainsi, si la plupart des vins suivent un standard, certains s'écartent de la norme avec des acidités nettement plus élevées.
-En ce qui concerne l'acidité volatile, la tendance est clairement orientée vers des valeurs faibles, bien que quelques vins se démarquent par des niveaux supérieurs.
-La concentration en acide citrique est en général modérée, se concentrant entre 0,25 et 0,5 g/dm³, avec quelques exceptions notables qui pourraient influencer le goût et la conservation du vin.
-Le sucre résiduel, quant à lui, présente une distribution fortement asymétrique vers la droite, ce qui indique une prédominance de vins avec moins de 10 g/dm³. Cependant, la présence d'une queue longue à droite du graphique souligne l'existence de vins probablement doux, avec des teneurs en sucre bien plus élevées.
-Les niveaux de chlorures sont concentrés et généralement bas.
-La distribution du dioxyde de soufre libre et total est légèrement inclinée vers la droite, ce qui révèle que si la plupart des vins contiennent des concentrations basses à modérées, quelques-uns présentent des niveaux plus élevés.
-La densité et le pH affichent des distributions normales.
-Les sulfates, montrent aussi une inclinaison vers des valeurs basses, avec là encore quelques vins qui s'en distinguent par des concentrations plus importantes.
-La teneur en alcool expose une distribution multimodale, reflétant la diversité des types de vins, des plus légers aux plus corsés, et des spécialités comme les vins fortifiés.
-Enfin, la qualité, bien que subjective, semble se concentrer dans une gamme moyenne (5 à 7), avec moins de vins atteignant des scores élevés.
+Les violin plots présentés montrent que les différentes caractéristiques (features) de l'ensemble de données possèdent des échelles de valeurs variées, des distributions de fréquence différentes, et pour certaines, des valeurs extrêmes (outliers). La standardisation de ces features est justifiée car elle permet de niveler le terrain de jeu pour tous les inputs du modèle. En ajustant les données pour qu'elles aient une moyenne de zéro et une variance unitaire, on garantit que chaque feature contribue de manière équitable au modèle, sans être influencée par l'ampleur de sa gamme de valeurs. Cela facilite la convergence des algorithmes d'optimisation, améliore la précision des estimations des paramètres, et permet une comparaison directe de l'importance des features. En somme, la standardisation est une étape préparatoire cruciale pour de nombreux algorithmes de machine learning afin d'améliorer la performance et la fiabilité du modèle final.
 
 ## e) Analyse multivariée
 
