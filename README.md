@@ -7,6 +7,7 @@
   <img src="https://github.com/Pierrepierrepierrepierrepierrepierre/projetSVM/assets/117682143/6631788f-243c-4ca9-bbb0-cf1c898ca7c2" alt="White and Red Wine Glasses" width="400"/>
 </p>
 
+</div>
 
 # I. Introducion
 
@@ -46,14 +47,19 @@ Nous passons à présent à l'analyse exploratoire, nous allons éxaminer de plu
 
 ### 1- variables dépendantes
 
+<div align="center">
+  
 ![image](https://github.com/Pierrepierrepierrepierrepierrepierre/projetSVM/assets/124379009/533cd6d5-08a9-48db-89bc-f08ef4b98d22)
 
+</div>
 
 Le graphique ci dessus nous montre la répartition de deux types de vins. On observe une répartition assez inégale, en effet, le vin blanc représente une part beaucoup plus importante, avec 75.39%, tandis que le vin rouge est moins fréquent à 24.61%.
 
+<div align="center">
 
 ![image](https://github.com/Pierrepierrepierrepierrepierrepierre/projetSVM/assets/124379009/795a66fb-32c6-435d-b489-ab51adc7f670)
 
+</div>
 
 Pour ce qui est de la variable qualité, nous avons préféré un histogramme en barre pour analyser la répartition. Les histogrammes en barres offrent une comparaison et une interprétation plus claires des fréquences lorsque l’on analyse des variables catégorielles. 
 Ainsi, nous observons une distribution asymétrique où la majorité des vins se concentrent autour des notes de qualité moyenne correspondant à une loi normale, ce qui est logique  puisque la plupart des vins reçoivent des notes moyennes et moins reçoivent des notes extrêmes.
