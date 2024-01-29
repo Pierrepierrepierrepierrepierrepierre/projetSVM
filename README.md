@@ -508,15 +508,14 @@ Ainsi, le réseau de neurones s'est avéré être le modèle le plus efficace po
 
 # VII. Discussion 
 
-- Pas de sélection de variables : pas petinent au vu du nombre de variables
-- Réseaux de neurones pas tuner
-- Autres analyses possibles, retirer des variables, en ajouter 
+Dans le cadre de cette étude, nous avons été confrontés à divers défis techniques et méthodologiques qui ont influencé notre approche et nos résultats finaux. Nous évoquerons également dans cette partie les axes d'amélioration possible de notre dossier.
 
+L'un des principaux problèmes rencontrés concerne la sélection des variables. Dans la littérature, il est fréquent de recourir à des techniques de sélection de variables pour réduire la dimensionnalité et améliorer l'interprétabilité des modèles. Cependant, dans notre cas, étant donné le nombre relativement limité de variables et l'importance théorique de chacune, nous avons opté pour une approche inclusive.
+Un autre défi a été le tuning des hyperparamètres pour nos réseaux de neurones. Malgré plusieurs tentatives, nous avons été confrontés à des difficultés avec le code d'optimisation, résultant en des messages d'erreur indiquant que la fonction de perte n'était pas interprétable pour nos données.  L'absence de cette étape pourrait avoir limité la capacité de notre modèle à généraliser au-delà de l'échantillon d'entraînement.
 
+Plusieurs axes d'amélioration sont possibles telles que l'application d'autres méthodes d'analyse ou l'exploration de techniques de réduction de dimensionnalité plus sophistiquées. Par exemple, l'application d'une analyse en composantes principales (PCA) ou d'une régularisation pourrait offrir un compromis entre la réduction de la complexité du modèle et le maintien d'une interprétabilité suffisante. De plus, l'expérimentation avec l'ajout ou la suppression de certaines variables pourrait fournir des insights supplémentaires sur leur influence relative et sur la robustesse de nos conclusions.
 
-
-
-
+Plusieurs axes d'amélioration sont possibles telles que l'utilisation de différentes méthodes d'analyse ou des approches plus élaborées pour simplifier notre modèle. Par exemple, faire une analyse en composantes principales (PCA) ou ajuster le modèle pourrait nous aider à le rendre moins complexe tout en restant facile à comprendre. En outre, en testant l'effet de l'ajout ou du retrait de variables spécifiques, nous pourrions mieux comprendre leur impact et renforcer la solidité de nos résultats.
 
 
 
