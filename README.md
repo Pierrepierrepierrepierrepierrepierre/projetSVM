@@ -196,7 +196,7 @@ Ainsi nous nous sommes demandé s’il ne fallait pas retirer les variables type
 ![outputviolin](https://github.com/Pierrepierrepierrepierrepierrepierre/projetSVM/assets/124379009/d37ad49c-195f-45f4-acea-6a577c0e09ad)
 
 </div>
-Les violin plots présentés montrent que les différentes caractéristiques (features) de l'ensemble de données possèdent des échelles de valeurs variées, des distributions de fréquence différentes, et pour certaines, des valeurs extrêmes (outliers). La standardisation de ces features est justifiée car elle permet de niveler le terrain de jeu pour tous les inputs du modèle. En ajustant les données pour qu'elles aient une moyenne de zéro et une variance unitaire, on garantit que chaque feature contribue de manière équitable au modèle, sans être influencée par l'ampleur de sa gamme de valeurs. Cela facilite la convergence des algorithmes d'optimisation, améliore la précision des estimations des paramètres, et permet une comparaison directe de l'importance des features. En somme, la standardisation est une étape préparatoire cruciale pour de nombreux algorithmes de machine learning afin d'améliorer la performance et la fiabilité du modèle final.
+Les violin plots présentés montrent que les features de l'ensemble de données possèdent des échelles de valeurs variées, des distributions de fréquence différentes, et pour certaines, des valeurs extrêmes. La standardisation de ces features est justifiée car elle permet de mettre chaque feature à la même échelle afin qu'il soit comparable dans nos modèles de machine learning.. En ajustant les données pour qu'elles aient une moyenne de zéro et une variance unitaire, on garantit que chaque feature contribue de manière équitable au modèle, sans être influencée par l'ampleur de sa gamme de valeurs. 
 
 ## e) Analyse multivariée
 
@@ -493,29 +493,24 @@ En revanche, les caractéristiques en bas du graphique, telles que "quality_5" e
 # VI. Conclusion
 
 
-En conclusion de notre projet sur la prédiction de la qualité et du type de vin, nous avons mis en œuvre une série de modèles de machine learning pour atteindre nos objectifs. Notre base de données, riche en caractéristiques physico-chimiques des vins, a été soigneusement préparée et nettoyée. 
+En conclusion de notre projet visant à prédire la qualité et le type de vin, nous avons mis en place une série de modèles de machine learning pour atteindre nos objectifs.
 
-Nous avons opté pour retirer les variables qui étaient trop corrélées entre-elles puisqu'elles n'étaient intéressante à impliquer toutes les deux dans nos modèles. Cependant, malgré la présence d'une dépendances entre variables qualité et type, nous avons décider de conserver les 2 afin d'optimiser la précision de nos modèles.
+Nous avons choisi de supprimer les variables fortement corrélées entre elles, car elles n'apportaient pas d'information significative lorsqu'elles étaient toutes deux impliquées dans nos modèles. Toutefois, même en présence d'une dépendance entre les variables qualité et type, nous avons décidé de les conserver toutes les deux afin d'optimiser la précision de nos modèles.
 
-Dans notre démarche, nous avons standardisé les variables quantitatives et transformé les variables qualitatives avec plus de deux modalités. Nous avons expérimenté avec divers algorithmes de classification binaire, incluant la régression logistique, plusieurs variantes de SVM (avec différents noyaux comme linéaire, polynomial, rbf) ainsi qu'un réseau de neurones. Pour évaluer et comparer ces modèles, nous avons réalisé une cross-validation à 5 plis, à l'exception du réseau de neurones, et avons examiné la précision moyenne obtenue.
+Dans notre démarche, nous avons standardisé les variables quantitatives et transformé les variables qualitatives comportant plus de deux modalités. Dans un premier temps, nous avons exploré plusieurs modèles de classification multiclasse, notamment deux modèles SVM (OVO et OVR) et un réseau de neurones. Dans ce contexte, le modèle OVO s'est révélé le plus performant et le mieux adapté pour prédire la qualité du vin.
 
-Au terme de nos analyses, nous avons constaté que le SVM avec noyau rbf et le réseau de neurones présentaient des performances similaires. Pour départager ces deux modèles, nous avons effectué une recherche sur grille (grid search) pour optimiser leurs hyper-paramètres. Finalement, le réseau de neurones a démontré une supériorité sur la majorité des indicateurs de performance, dont le recall, le f1-score et l'AUC.
+Par ailleurs, nous avons testé différents algorithmes de classification binaire, tels que la régression logistique, plusieurs variantes de SVM (avec différents noyaux tels que linéaire, polynomial, rbf) ainsi qu'un réseau de neurones. Concernant nos modèles SVM, celui avec un noyau rbf s'est avéré être le plus performant. Le réseau de neurones, quant à lui, a affiché une performance supérieure à tous les modèles SVM, bien que nous n'ayons pas réussi à le tuner. Nous avons donc optimisé le modèle SVM avec un noyau rbf pour le grid search, obtenant des résultats presque similaires à ceux du modèle avec le noyau kernel sans grid search. En fin de compte, le modèle de réseau de neurones s'est avéré être le meilleur pour classifier le type de vin, même sans ajustement fin.
 
-Ainsi, le réseau de neurones s'est avéré être le modèle le plus efficace pour prédire la qualité et le type de vin dans notre projet. Cette conclusion souligne l'importance d'une préparation minutieuse des données et de l'évaluation rigoureuse des modèles dans les projets de machine learning.
-
-</div>
 
 
 # VII. Discussion 
 
-Dans le cadre de cette étude, nous avons été confrontés à divers défis techniques et méthodologiques qui ont influencé notre approche et nos résultats finaux. Nous évoquerons également dans cette partie les axes d'amélioration possible de notre dossier.
+Au cours de cette étude, nous avons été confrontés à divers défis techniques et méthodologiques qui ont influencé notre approche et nos résultats finaux. 
 
-L'un des principaux problèmes rencontrés concerne la sélection des variables. Dans la littérature, il est fréquent de recourir à des techniques de sélection de variables pour réduire la dimensionnalité et améliorer l'interprétabilité des modèles. Cependant, dans notre cas, étant donné le nombre relativement limité de variables et l'importance théorique de chacune, nous avons opté pour une approche inclusive.
-Un autre défi a été le tuning des hyperparamètres pour nos réseaux de neurones. Malgré plusieurs tentatives, nous avons été confrontés à des difficultés avec le code d'optimisation, résultant en des messages d'erreur indiquant que la fonction de perte n'était pas interprétable pour nos données.  L'absence de cette étape pourrait avoir limité la capacité de notre modèle à généraliser au-delà de l'échantillon d'entraînement.
+Tout d'abord, aucune sélection de variables n'a été effectuée. Il est courant d'utiliser des techniques de sélection de variables pour réduire la dimensionnalité et améliorer l'interprétabilité des modèles. Cependant, dans notre cas, compte tenu du nombre relativement limité de variables, nous avons choisi de ne pas effectuer de sélection de variables.
 
-Plusieurs axes d'amélioration sont possibles telles que l'application d'autres méthodes d'analyse ou l'exploration de techniques de réduction de dimensionnalité plus sophistiquées. Par exemple, l'application d'une analyse en composantes principales (PCA) ou d'une régularisation pourrait offrir un compromis entre la réduction de la complexité du modèle et le maintien d'une interprétabilité suffisante. De plus, l'expérimentation avec l'ajout ou la suppression de certaines variables pourrait fournir des insights supplémentaires sur leur influence relative et sur la robustesse de nos conclusions.
+Un autre défi a été le réglage des hyperparamètres pour nos réseaux de neurones. Malgré plusieurs tentatives, nous avons rencontré des difficultés avec le code d'optimisation, ce qui a généré des messages d'erreur indiquant que la fonction de perte n'était pas interprétable pour nos données. L'absence de cette étape aurait pu limiter la capacité de notre modèle à généraliser au-delà de l'échantillon d'entraînement. De plus, nous n'avons pas effectué de grid search sur nos modèles de classification multiclasse en raison du temps considérable que cela aurait demandé.
 
-Plusieurs axes d'amélioration sont possibles telles que l'utilisation de différentes méthodes d'analyse ou des approches plus élaborées pour simplifier notre modèle. Par exemple, faire une analyse en composantes principales (PCA) ou ajuster le modèle pourrait nous aider à le rendre moins complexe tout en restant facile à comprendre. En outre, en testant l'effet de l'ajout ou du retrait de variables spécifiques, nous pourrions mieux comprendre leur impact et renforcer la solidité de nos résultats.
 
 
 
