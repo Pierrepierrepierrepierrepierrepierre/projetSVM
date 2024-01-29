@@ -283,16 +283,18 @@ Vient à présent l’étape de standardisation de nos variables. Elle consiste 
 Maintenant que notre base est prête, nous pouvons passer à la réalisation des modèles. Nous allons tester différents modèles pour chaque analyse puis nous comparerons leur qualité à l’aide de différents indicateurs.
 
 ## a) Analyse multiclasse 
+
 Nous commençons par l’analyse multiclasse qui à pour but de prédire la note de qualité d’un vin.
 
 ### 1- Les modèles utilisés 
 
-Pour prédire la qualité du vin, nous avons utilisé plusieurs modèles, à savoir les approches One-vs-One (OvO), One-vs-Rest (OvR) et les réseaux de neurones.
-Le modèle OvO compare chaque paire de catégories pour mieux les distinguer, un peu comme si on comparait chaque type de vin deux par deux pour voir ce qui les différencie. Le modèle OvR, quant à lui, regarde chaque catégorie de vin séparément et la compare à toutes les autres en même temps. C'est une méthode plus simple et rapide, surtout quand il y a beaucoup de catégories de vins différentes à analyser.
-Nous avons également utilisé des réseaux de neurones pour évaluer la qualité du vin. Le réseau de neurones passe en revue toutes les informations sur chaque vin (l’ensemble de nos variables explicatives) et apprend à partir de ces données pour prédire sa qualité. 
+Pour prédire la qualité du vin, nous avons employé divers modèles, notamment des modèles SVM et un réseau de neurones.
+
+Concernant les modèles SVM, nous avons appliqué les approches One-vs-One (OvO) et One-vs-Rest (OvR). Le modèle OvO compare chaque paire de catégories afin de mieux les distinguer, similaire à une comparaison exhaustive de chaque type de vin deux par deux pour identifier leurs différences. D'un autre côté, le modèle OvR examine chaque catégorie de vin individuellement et la compare simultanément à toutes les autres. Cette méthode est plus simple et rapide, particulièrement lorsqu'il y a un grand nombre de catégories de vins différentes à analyser.
+Nous avons employé des réseaux de neurones afin d'évaluer la qualité du vin. La configuration du réseau de neurones a été spécifiée de manière à ce que le modèle tienne compte du fait que la variable cible à prédire est catégorielle. Ainsi, nous avons utilisé la fonction d'activation 'softmax'.
 
 ### 2- Comparaison des modèles 
-Maintenant, nous pouvons passer à la comparaison des résultats obtenus pour ces différents modèles dans l’optique de sélectionner le meilleur. Nous commencerons par comparer les modèles ovo et ovr puis nous intégrerons le modèle de réseau de neurones à l'analyse.
+Maintenant, nous pouvons passer à la comparaison des résultats obtenus pour ces différents modèles dans l’optique de sélectionner le meilleur. Nous commencerons par comparer les modèles ovo et ovr entre eux, puis nous intégrerons le modèle de réseau de neurones à l'analyse.
 
 Nous avons réalisé une première validation croisée, en utilisant 5 subdivisions (folds), pour examiner nos 2 modèles différents. Le graphique présenté ci-dessous illustre le score de précision, qui correspond au ratio des classifications correctes sur le nombre total de classification pour chacune des 5 subdivisions.
 
@@ -312,9 +314,7 @@ Nous comparons maintenant ces métriques avec le modèle réseau de neurones et 
 
 Nous concluons donc que le modèle OVO semble offrir les meilleures performances, avec une précision relativement élevée et une meilleure capacité à classer correctement les échantillons par rapport aux modèles OVR et Réseau de Neurones. Le modèle OVR, bien qu'ayant une précision et un rappel inférieurs à OVO, surpasse légèrement le Réseau de Neurones en termes d'accuracy. Cependant, le Réseau de Neurones se trouve à la traîne avec des scores nettement inférieurs dans toutes les métriques, notamment en précision et en rappel, suggérant qu'il pourrait avoir du mal à gérer correctement les classifications dans ce cas spécifique.
 
-### 3- Grid Search sur meilleurs modèles
-
-Nous n'avons pas procédé à l'optimisation par grid search pour le meilleur modèle multiclasse, comme initialement prévu, car le processus s'est avéré être excessivement long et fastidieux à exécuter.
+Par ailleurs, nous n'avons pas procédé à l'optimisation par grid search pour le meilleur modèle multiclasse, comme initialement prévu, car le processus s'est avéré être excessivement long à exécuter.
 
 
 ## b) Analyse de classification binaire 
@@ -330,7 +330,7 @@ Classification à Vecteurs de Support Linéaire (lsvc) : Trouve un hyperplan qui
 Classificateur à Descente de Gradient Stochastique (sgdc) : Optimise des modèles linéaires de manière efficace, particulièrement adapté aux grands ensembles de données.
 Classification à Vecteurs de Support (svc) : Utilise une marge maximale pour distinguer les classes, efficace même avec des frontières de décision complexes.
 Fonction de Base Radiale (rbf) et Noyau Polynomial (poly) : Deux fonctions de noyau pour SVM, traitant respectivement les relations non linéaires et complexes entre les caractéristiques.
-Nous utiliserons également un réseau de neurones pour cette analyse.
+Nous utiliserons également un réseau de neurones pour cette analyse. Qui sera spécifié du'une manière différente que dans la modélisation multiclass, la fonction d'activiation utilisée est 'sigmoid', elle est adaptée à la classification binaire.
 
 ### 2- Comparaison des modèles 
 
@@ -358,11 +358,12 @@ Nous regardons à présent les métriques pour le réseaux de neurones et observ
 | Recall    | 0.9989406779661016     |
 | F1 Score  | 0.9963021658742736     |
 
+
 Le modèle a montré une excellente performance sur l'ensemble de validation, avec une exactitude remarquable de 99.41%, indiquant que presque toutes les prédictions étaient correctes. La précision était également très élevée à 99.37%, signifiant que la majorité des cas classés comme positifs étaient réellement positifs. Le rappel, à 99.89%, montre que le modèle a identifié avec succès presque tous les cas positifs réels. Le score F1 élevé de 99.63% révèle un équilibre parfait entre précision et rappel. La matrice de confusion confirme ces résultats avec un très faible nombre de faux positifs et un seul faux négatif, soulignant la fiabilité exceptionnelle du modèle dans ses prédictions faisant de lui celui que l’on retiendra comme notre meilleur modèle au vu de son accuracy qui dépasse nos meilleurs modèles SVM.
 
 
-faire une phrase pour expliquer pourquoi on gridsearch pas sur le rdn
 
+Ensuite, nous avons tenté d'ajuster les paramètres de notre réseau de neurones. Malheureusement, nous avons rencontré plusieurs difficultés sans parvenir à trouver de solution. L'erreur qui est apparue concerne la fonction de perte que nous avons spécifiée comme étant 'binary_crossentropy'. Malgré nos efforts avec différentes approches, nous n'avons pas obtenu les résultats escomptés. En conséquence, nous allons effectuer une recherche par grille sur notre meilleur modèle SVM pour évaluer s'il permet d'améliorer nos prédictions et comment il classe notre variable cible.
 
 
 ### 3- Grid Search sur le meilleur modèle SVM
