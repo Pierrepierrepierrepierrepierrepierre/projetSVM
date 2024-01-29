@@ -506,6 +506,13 @@ Ainsi, le réseau de neurones s'est avéré être le modèle le plus efficace po
 </div>
 
 
+# VII. Discussion 
+
+- Pas de sélection de variables : pas petinent au vu du nombre de variables
+- Réseaux de neurones pas tuner
+- Autres analyses possibles, retirer des variables, en ajouter 
+
+
 
 
 
