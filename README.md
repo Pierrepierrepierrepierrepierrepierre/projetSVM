@@ -293,20 +293,6 @@ A présent, il est important de traiter les valeurs manquantes. Pour ce faire on
 
 Le nombre de valeurs manquantes est très faible donc il sera mieux de simplement les supprimer. Une imputation par la moyenne et la médiane aurait pu être réaliser mais cela n'est pas indispensable en raison de leur faible nombre dans notre dataset comme nous pouvons le constater avec le tableau suivant qui nous donne le pourcentage d’outliers par variables.
 
-| Feature              | Value      |
-|----------------------|------------|
-| Type                 | 0.000000   |
-| Fixed Acidity        | 0.153917   |
-| Volatile Acidity     | 0.123134   |
-| Citric Acid          | 0.046175   |
-| Residual Sugar       | 0.030783   |
-| Chlorides            | 0.030783   |
-| Total Sulfur Dioxide | 0.000000   |
-| pH                   | 0.138525   |
-| Sulphates            | 0.061567   |
-| Alcohol              | 0.000000   |
-| Quality              | 0.000000   |
-
 
 ## c) points atypiques 
 
