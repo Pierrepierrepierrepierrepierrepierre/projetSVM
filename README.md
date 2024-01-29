@@ -1,6 +1,6 @@
 <div align="center">
   
-# Projet SVM et Réseaux de neurones : prédiction qualité et type de vin
+# Classification de la qualité et du type de vin
 
 </div>
 
@@ -60,6 +60,7 @@ Le graphique ci dessus nous montre la répartition de deux types de vins. On obs
 
 ![image](https://github.com/Pierrepierrepierrepierrepierrepierre/projetSVM/assets/124379009/3e9c5104-602d-453d-9883-80a1c8d9f984)
 
+</div>
 
 Pour ce qui est de la variable qualité, nous avons préféré un histogramme en barre pour analyser la répartition. Les histogrammes en barres offrent une comparaison et une interprétation plus claires des fréquences lorsque l’on analyse des variables catégorielles. 
 Ainsi, nous observons une distribution asymétrique où la majorité des vins se concentrent autour des notes de qualité moyenne correspondant à une loi normale, ce qui est logique  puisque la plupart des vins reçoivent des notes moyennes et moins reçoivent des notes extrêmes.
@@ -181,7 +182,11 @@ Ainsi nous nous sommes demandé s’il ne fallait pas retirer les variables type
 
 ## d) Distribution des features
 
+<div align="center">
+
 ![image](https://github.com/Pierrepierrepierrepierrepierrepierre/projetSVM/assets/124379009/862e8913-4b0b-474f-bc11-b7c89ea14e12)
+
+</p>
 
 L'analyse des caractéristiques des vins à travers des graphiques en violon révèle une hétérogénéité intéressante propre à la vinification. L'acidité fixe s'inscrit dans une distribution quasi normale, gravitant majoritairement autour de 7 à 8 g/dm³. Ainsi, si la plupart des vins suivent un standard, certains s'écartent de la norme avec des acidités nettement plus élevées.
 En ce qui concerne l'acidité volatile, la tendance est clairement orientée vers des valeurs faibles, bien que quelques vins se démarquent par des niveaux supérieurs.
@@ -199,33 +204,55 @@ Enfin, la qualité, bien que subjective, semble se concentrer dans une gamme moy
 
 A présent, nous concentrons notre analyse sur les corrélations entre nos différentes variables afin d’éliminer les variables inutiles à notre modélisation  en raison de l’une multicolinéarité potentielle. Pour ce faire nous analysons la matrice des corrélation.
 
-
+<div align="center">
+  
 ![image](https://github.com/Pierrepierrepierrepierrepierrepierre/projetSVM/assets/124379009/e360b141-ea74-46ae-8b30-d48ba316b6a6)
+
+</p>
 
 Étant donné qu’une matrice des corrélations classiques n’est pas très visible, nous en réalisons une ou seulement les corrélation supérieure à 0,65 sont affichées. 
 Nous obtenons donc 2 groupes de variables corrélées entre-elles, à savoir sulfure dioxyde libre et sulfure dioxyde total avec une corrélation de 0,74 ainsi que les variables densité et alcool qui sont corrélées à -0,7.
 
+<div align="center">
+  
 ![image](https://github.com/Pierrepierrepierrepierrepierrepierre/projetSVM/assets/124379009/aabe1c2e-6016-4cab-be90-8f66896ae1db)
+
+</p>
 
 Pour choisir quelles variables nous allons garder, nous nous intéressons aux diagrammes en barres de l’analyse bivariée. 
 Premièrement pour les variables liées au sulfure, on ne remarque pas de différences significatives entre les 2, par rapport à la variable qualité comme nous pouvons le voir sur le graphique ci-dessous
 
+<div align="center">
+  
 <img src="https://github.com/Pierrepierrepierrepierrepierrepierre/projetSVM/assets/124379009/ed4d08d2-6124-42b9-92b9-e8c5aea79d87" width="420"/> <img src="https://github.com/Pierrepierrepierrepierrepierrepierre/projetSVM/assets/124379009/f76ba96e-6078-4cfe-95cf-bb3af8c99938" width="420"/>
+
+</p>
 
 Cependant, pour la variable type on note que la variable sulfure dioxyde total marque une plus grande différence par rapport au type de vin la rendant plus intéressante pour le déterminer par la suite dans nos modèles. Ainsi, c’est la variable que nous retiendrons.
 
+<div align="center">
+  
 <img src="https://github.com/Pierrepierrepierrepierrepierrepierre/projetSVM/assets/124379009/e60e2ee7-7f5b-45a0-a0d2-853f8b604988" width="420"/> <img src="https://github.com/Pierrepierrepierrepierrepierrepierre/projetSVM/assets/124379009/4f8d92e7-2c6a-4d26-b19a-cb317f0bc51d" width="420"/>
+
+</p>
 
 
 
 Ensuite, nous procédons à la même analyse pour nos variables densité et alcool. Par rapport au type de vin.
 
+<div align="center">
+  
 <img src="https://github.com/Pierrepierrepierrepierrepierrepierre/projetSVM/assets/124379009/1d33828c-19d7-496c-9a8a-4eebb6b7c71c" width="420"/> <img src="https://github.com/Pierrepierrepierrepierrepierrepierre/projetSVM/assets/124379009/1b7f6664-54eb-4182-b853-7387536c51bc" width="420"/>
 
+</p>
 
 on observe qu'il n'y a aucune différence pour la densité ainsi que pour la teneur en alcool. Nous nous intéressons alors à la variable qualité. 
 
+<div align="center">
+  
 <img src="https://github.com/Pierrepierrepierrepierrepierrepierre/projetSVM/assets/124379009/6a94d0df-bf00-4162-b2c6-df7392b47a84" width="49%"/> <img src="https://github.com/Pierrepierrepierrepierrepierrepierre/projetSVM/assets/124379009/75f3a62f-2e4e-4eee-8028-3ee2d47e3da2" width="49%"/>
+
+</p>
 
 
 La densité ne semble pas non plus impacter la qualité d’un vin puisque l’on observe aucune différence de valeur par rapport aux notes de qualité. Par ailleurs, pour ce qui est de la teneur en alcool, on remarque assez facilement une augmentation progressive de celle-ci à mesure que la qualité augmente pour les notes supérieures à 5. Ainsi il semble plus pertinent de conserver la variable alcool pour nos modèles puisqu’elle permet de différencier davantage les vins que la variable densité qui s'avère moins intéressante en raison de sa faible variabilité en fonction du type et de la qualité. 
