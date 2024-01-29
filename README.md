@@ -58,7 +58,7 @@ Le graphique ci dessus nous montre la répartition de deux types de vins. On obs
 
 <div align="center">
 
- <img src="https://github.com/Pierrepierrepierrepierrepierrepierre/projetSVM/raw/main/assets/124379009/3e9c5104-602d-453d-9883-80a1c8d9f984" alt="White and Red Wine Glasses" width="400"/>
+ <img src="https://github.com/Pierrepierrepierrepierrepierrepierre/projetSVM/raw/main/assets/124379009/3e9c5104-602d-453d-9883-80a1c8d9f984" width="400"/>
 
 
  
