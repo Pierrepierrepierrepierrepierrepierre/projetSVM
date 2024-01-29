@@ -187,10 +187,7 @@ Ainsi nous nous sommes demandé s’il ne fallait pas retirer les variables type
 
 <div align="center">
 
-
-
-
-<img src="https://github.com/Pierrepierrepierrepierrepierrepierre/projetSVM/assets/124379009/05ec7045-f963-49bf-a53c-93c55d749d06" width="420"/> 
+<img width="173" alt="Capture d’écran 2024-01-29 135501" src="https://github.com/Pierrepierrepierrepierrepierrepierre/projetSVM/assets/124379009/aa32d2bf-2e15-4783-9e3e-e27a1c606e45">
 
 </div>
 
