@@ -312,11 +312,11 @@ Cette étape consiste en la préparation des données pour le machine learning e
 
 ## e) Rééquilibrage
 
-Maintenant, il est essentiel de procéder au rééquilibrage de la variable cible 'type', qui est de nature binaire et est distribuée de manière inégale avec environ 20% de vins rouges contre 80% de vins blancs. Cette disproportion peut entraîner un biais significatif dans les performances de notre modèle, en le prédisposant à mieux reconnaître les vins blancs au détriment des rouges.
+Maintenant, il devient crucial d'effectuer le rééquilibrage de nos variables cibles. Prenons l'exemple de la variable cible `type`, qui est binaire et présente une distribution inégale avec environ 20% de vins rouges et 80% de vins blancs. Cette disparité peut introduire un biais significatif dans les performances du modèle, le prédisposant à mieux reconnaître les vins blancs au détriment des vins rouges. Une situation similaire se présente avec la variable `quality`, où certaines notations sont sous-représentées et d'autres sont sur-représentées.
 
-Pour remédier à cela, des techniques de rééquilibrage telles que le suréchantillonnage des vins rouges ou le sous-échantillonnage des vins blancs peuvent être employées. Le suréchantillonnage, par exemple, impliquerait de générer artificiellement des données supplémentaires pour les vins rouges, ou de dupliquer les échantillons existants, afin de compenser leur présence plus faible. En outre, le sous-échantillonnage réduirait le nombre d'échantillons de vins blancs pour équilibrer la répartition. Dans notre cas, nous avons appliqué un sur-échantillonnage à l’aide de la fonction RandomOverSampler.
+Pour remédier à cette situation, des techniques de rééquilibrage telles que le suréchantillonnage des vins rouges ou le sous-échantillonnage des vins blancs peuvent être mises en œuvre. Dans notre cas, nous avons opté pour le suréchantillonnage en utilisant la fonction RandomOverSampler. Le suréchantillonnage implique la génération artificielle de données supplémentaires pour les vins rouges en dupliquant les échantillons existants, afin de compenser leur présence plus faible.
 
-En équilibrant la présence des deux classes de 'type' dans notre jeu de données d'entraînement, nous pouvons améliorer significativement la capacité du modèle à apprendre de manière équitable les caractéristiques de chaque type de vin. Cela permettra une amélioration de la précision globale du modèle et assurera que les prédictions soient aussi fiables pour les vins rouges que pour les vins blancs. 
+En résumé, nous avons rééquilibré les classes dans notre ensemble d'entraînement, visant à améliorer significativement la performance de nos modèles. Cette démarche contribuera à améliorer la précision globale du modèle et garantira que les prédictions soient également fiables pour chaque classe.
 
 
 ## f) Standardisation
@@ -342,23 +342,32 @@ Nous avons employé des réseaux de neurones afin d'évaluer la qualité du vin.
 ### 2- Comparaison des modèles 
 Maintenant, nous pouvons passer à la comparaison des résultats obtenus pour ces différents modèles dans l’optique de sélectionner le meilleur. Nous commencerons par comparer les modèles ovo et ovr entre eux, puis nous intégrerons le modèle de réseau de neurones à l'analyse.
 
-Nous avons réalisé une première validation croisée, en utilisant 5 subdivisions (folds), pour examiner nos 2 modèles différents. Le graphique présenté ci-dessous illustre le score de précision, qui correspond au ratio des classifications correctes sur le nombre total de classification pour chacune des 5 subdivisions.
+Nous avons réalisé une première validation croisée, pour examiner nos 2 modèles différents. Le graphique présenté ci-dessous illustre le score de précision, qui correspond au ratio des classifications correctes sur le nombre total de classification pour chacune des 5 subdivisions.
 
+<div align="center">
+  
 ![image](https://github.com/Pierrepierrepierrepierrepierrepierre/projetSVM/assets/124379009/82df27bd-849f-4db8-8ff1-f8173466c9d3)
+
+</div>
+
 
 Le graphique illustre la performance de deux modèles sur cinq essais distincts d'une validation croisée. Le modèle représenté OVO (ligne bleu) démontre une précision supérieure et plus stable que le modèle OVR, signalant une fiabilité accrue et une constance dans la prédiction sur les différents folds. Néanmoins, il est important de noter que la précision, bien qu'utile, n'est pas l'unique indicateur de la performance d'un modèle. Des mesures telles que le Recall, l'aire sous la courbe ROC (AUC) et le score F1 sont essentielles pour une évaluation approfondie et précise des modèles.
 
 
 Nous comparons maintenant ces métriques avec le modèle réseau de neurones et obtenons les métriques suivantes :
 
+<div align="center">
+  
 | Méthode             | Précision | Rappel  | F1-score | Accuracy |
 |---------------------|-----------|---------|----------|----------|
 | OVO (One-vs-One)    | 0.5515    | 0.4423  | 0.4657   | 0.4423   |
 | OVR (One-vs-Rest)   | 0.5188    | 0.3562  | 0.3698   | 0.3562   |
 | Réseau de Neurones  | 0.2443    | 0.3208  | 0.2282   | 0.3821   |
 
+</div>
 
-Nous concluons donc que le modèle OVO semble offrir les meilleures performances, avec une précision relativement élevée et une meilleure capacité à classer correctement les échantillons par rapport aux modèles OVR et Réseau de Neurones. Le modèle OVR, bien qu'ayant une précision et un rappel inférieurs à OVO, surpasse légèrement le Réseau de Neurones en termes d'accuracy. Cependant, le Réseau de Neurones se trouve à la traîne avec des scores nettement inférieurs dans toutes les métriques, notamment en précision et en rappel, suggérant qu'il pourrait avoir du mal à gérer correctement les classifications dans ce cas spécifique.
+
+Nous concluons donc que le modèle OVO semble offrir les meilleures performances, avec une précision relativement élevée et une meilleure capacité à classer correctement les échantillons par rapport aux modèles OVR et réseau de Neurones. Le modèle OVR, bien qu'ayant une précision et un rappel inférieurs à OVO, surpasse légèrement le Réseau de Neurones en termes d'accuracy. De plus, le réseau de Neurones se trouve à la traîne avec des scores nettement inférieurs dans toutes les métriques, notamment en précision et en rappel, suggérant qu'il pourrait avoir du mal à gérer correctement les classifications dans ce cas spécifique.
 
 Par ailleurs, nous n'avons pas procédé à l'optimisation par grid search pour le meilleur modèle multiclasse, comme initialement prévu, car le processus s'est avéré être excessivement long à exécuter.
 
@@ -371,18 +380,26 @@ Nous nous interessons maintenant à l’analyse binaire qui à pour but de préd
 
 Pour commencer cette partie, nous résumons succinctement chaque méthode utilisée : 
 
-Régression Logistique (lgr) : Utilisée pour des classifications binaires, elle modélise la probabilité d'un événement en fonction des variables d'entrée.
-Classification à Vecteurs de Support Linéaire (lsvc) : Trouve un hyperplan qui sépare de manière optimale les classes, elle s’avère particulièrement efficace pour des classifications précises.
-Classificateur à Descente de Gradient Stochastique (sgdc) : Optimise des modèles linéaires de manière efficace, particulièrement adapté aux grands ensembles de données.
-Classification à Vecteurs de Support (svc) : Utilise une marge maximale pour distinguer les classes, efficace même avec des frontières de décision complexes.
-Fonction de Base Radiale (rbf) et Noyau Polynomial (poly) : Deux fonctions de noyau pour SVM, traitant respectivement les relations non linéaires et complexes entre les caractéristiques.
-Nous utiliserons également un réseau de neurones pour cette analyse. Qui sera spécifié du'une manière différente que dans la modélisation multiclass, la fonction d'activiation utilisée est 'sigmoid', elle est adaptée à la classification binaire.
+- Régression Logistique (lgr) : Utilisée pour des classifications binaires, elle modélise la probabilité d'un événement en fonction des variables d'entrée.
+- Classification à Vecteurs de Support Linéaire (lsvc) : Trouve un hyperplan qui sépare de manière optimale les classes, elle s’avère particulièrement efficace pour des classifications précises.
+- Classificateur à Descente de Gradient Stochastique (sgdc) : Optimise des modèles linéaires de manière efficace, particulièrement adapté aux grands ensembles de données.
+- Classification à Vecteurs de Support (svc) : Utilise une marge maximale pour distinguer les classes, efficace même avec des frontières de décision complexes.
+- Fonction de Base Radiale (rbf) et Noyau Polynomial (poly) : Deux fonctions de noyau pour SVM, traitant respectivement les relations non linéaires et complexes entre les caractéristiques.
+
+Nous inclurons également un réseau neuronal dans cette analyse. Sa spécification diffère de celle utilisée dans la modélisation multiclasse, avec l'utilisation d'une fonction d'activation 'sigmoid' adaptée à la classification binaire.
 
 ### 2- Comparaison des modèles 
 
+<div align="center">
+
 ![image](https://github.com/Pierrepierrepierrepierrepierrepierre/projetSVM/assets/124379009/dde84a0c-f0ed-4146-b4af-5ee4be727334)
 
+</div>
+
 Il est important de souligner que la précision fournit une évaluation de la performance globale d'un modèle sur un ensemble de données, par ailleurs, la stabilité indique la constance de cette performance sur différents ensembles de données ou situations. Un modèle optimal allie donc une haute précision à une grande stabilité, assurant ainsi des prédictions fiables et régulières.
+
+<div align="center">
+
 
 | Modèle N° | Accuracy                | Std                        |
 |-----------|-------------------------|----------------------------|
@@ -393,9 +410,13 @@ Il est important de souligner que la précision fournit une évaluation de la pe
 | 4         | 0.9923299656941428      | 0.001962150690119038       |
 | 5         | 0.9927268785167002      | 0.0015505065873888573      |
 
+</div>
+
 En conclusion, les modèles rbf et poly se distinguent par leur performance, avec une légère avance pour le modèle poly, notamment dans les derniers folds. Bien que les autres modèles (lgr, lsvc, sgdc, svc) affichent une certaine variabilité, ils maintiennent une stabilité relative qui ne permet pas de surpasser les modèles rbf et poly. Concernant la stabilité, le modèle poly présente une légère supériorité par rapport au modèle rbf, le positionnant ainsi comme le meilleur sur l'ensemble des métriques analysées.
 
 Nous regardons à présent les métriques pour le réseaux de neurones et observons les résultats suivants ; 
+
+<div align="center">
 
 | Métrique  | Valeur                 |
 |-----------|------------------------|
@@ -403,6 +424,9 @@ Nous regardons à présent les métriques pour le réseaux de neurones et observ
 | Precision | 0.9936775553213909     |
 | Recall    | 0.9989406779661016     |
 | F1 Score  | 0.9963021658742736     |
+
+</div>
+
 
 
 Le modèle a montré une excellente performance sur l'ensemble de validation, avec une exactitude remarquable de 99.41%, indiquant que presque toutes les prédictions étaient correctes. La précision était également très élevée à 99.37%, signifiant que la majorité des cas classés comme positifs étaient réellement positifs. Le rappel, à 99.89%, montre que le modèle a identifié avec succès presque tous les cas positifs réels. Le score F1 élevé de 99.63% révèle un équilibre parfait entre précision et rappel. La matrice de confusion confirme ces résultats avec un très faible nombre de faux positifs et un seul faux négatif, soulignant la fiabilité exceptionnelle du modèle dans ses prédictions faisant de lui celui que l’on retiendra comme notre meilleur modèle au vu de son accuracy qui dépasse nos meilleurs modèles SVM.
