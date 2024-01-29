@@ -46,7 +46,7 @@ Nous avons exploité une base de données disponible sur le site Kaggle, spécia
 Nous passons à présent à l'analyse exploratoire, nous allons éxaminer de plus près les caractéristiques distinctives de notre collection de vins à travers une analyse univariée, révélant les tendances et les nuances de leur composition et de leur qualité.
 
 
-### 1- variables dépendantes
+### 1- Targets
 
 <div align="center">
   
@@ -66,7 +66,7 @@ Ainsi, nous observons une distribution asymétrique où la majorité des vins se
 
 De ce fait, nous devrons procéder à un rééquilibrage des classes afin d’avoir des modèles pertinents  
 
-### 2- variables explicatives
+### 2- Features
 
 |       | Fixed Acidity | Volatile Acidity | Citric Acid | Residual Sugar | Chlorides | Free Sulfur Dioxide | Total Sulfur Dioxide | Density  | pH    | Sulphates | Alcohol | Quality |
 |-------|---------------|------------------|-------------|----------------|-----------|---------------------|----------------------|----------|-------|-----------|---------|---------|
@@ -124,27 +124,49 @@ Il n'y a pas de tendance claire reliant la qualité du vin au sucre résiduel; l
 On observe que les vins de qualité inférieure ont des concentrations plus élevées en chlorides, tandis que les vins de qualité supérieure ont tendance à en avoir moins. La concentration en chlorides diminue globalement à mesure que la qualité augmente. La variabilité des concentrations en chlorides semble diminuer également avec l'augmentation de la qualité, particulièrement visible pour les vins de qualité 9. Cela nous permet de dire que les vins mieux notés ont une composition plus cohérente en termes de chlorides.
 
 
-### 1- Variable type
+### 1- Target 'type'
 
+
+<div align="center">
+  
 ![image](https://github.com/Pierrepierrepierrepierrepierrepierre/projetSVM/assets/124379009/9b6e7b16-7045-4c84-bca8-23b210e15c80)
+
+</div>
 
 Le graphique montre que les vins blancs ont des niveaux de dioxyde de soufre total nettement plus élevés que les vins rouges, avec une variabilité moindre dans les concentrations pour les vins rouges.
 
+
+<div align="center">
+  
 ![image](https://github.com/Pierrepierrepierrepierrepierrepierre/projetSVM/assets/124379009/ee57dc69-da2d-4dd1-87a4-0c0554e11f63)
+
+</div>
 
 Les vins rouges présentent des concentrations plus élevées en chlorides par rapport aux vins blancs. En moyenne, sur notre échantillon, on note presque deux fois plus de chlorides pour un vin rouge par rapport à un vin blanc.
 
+
+<div align="center">
+  
 ![image](https://github.com/Pierrepierrepierrepierrepierrepierre/projetSVM/assets/124379009/efb7e23c-9f6f-4146-b8ed-69cff8e7dde5)
+
+</div>
 
 Pour ce qui est de la teneur en sucre, on remarque un taux plus de 2 fois supérieur pour les vin blanc par rapport aux vins rouges.
 
+<div align="center">
+  
 ![image](https://github.com/Pierrepierrepierrepierrepierrepierre/projetSVM/assets/124379009/98ad2ec7-1df7-4b99-ac83-f6d3c1bc86fc)
+
+</div>
 
 Enfin, pour le taux d’alcool contenu dans les vins, on ne remarque aucune différence, signifiant que le taux d’alcool ne dépend pas du type de vin. Ainsi, notre modèle ne pourra pas se baser sur cette variable pour reconnaître le type de vin.
 
 
-
+<div align="center">
+  
 ![image](https://github.com/Pierrepierrepierrepierrepierrepierre/projetSVM/assets/124379009/79b3eb17-c8ef-484c-9f9c-e5f26c979951)
+
+</div>
 
 Le graphique à barres présenté détaille la distribution des notes de qualité pour les deux catégories de vins. Il ressort que la note '5' est la plus commune pour les rouges, tandis que les blancs sont le plus souvent notés '6', révélant une qualité perçue légèrement meilleure pour ces derniers. Les données visuelles suggèrent que les vins blancs tendent à être évalués plus favorablement que les rouges comme en témoignent les barres plus élevées pour les notes '6', '7', et '8' par rapport aux vins rouges.
 
