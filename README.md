@@ -323,7 +323,6 @@ En équilibrant la présence des deux classes de 'type' dans notre jeu de donné
 
 Vient à présent l’étape de standardisation de nos variables. Elle consiste en une technique de traitement des données pour rendre les variables plus comparables et donc plus adaptées à l'analyse. La standardisation transforme les données de manière à ce que leur moyenne soit égale à 0 et leur écart-type égal à 1. Cela est particulièrement utile lorsque les caractéristiques ont des échelles différentes comme c’est notre cas ici. Pour cela, nous avons utilisé la fonction StandardScaler de la bibliothèque scikit-learn.
 
-![image](https://github.com/Pierrepierrepierrepierrepierrepierre/projetSVM/assets/124379009/27a1be4d-8f42-4554-a4e1-2a5f2c49f910)
 
 # V. Modélisation
 
