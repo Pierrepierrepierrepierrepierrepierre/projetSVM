@@ -58,8 +58,8 @@ Le graphique ci dessus nous montre la répartition de deux types de vins. On obs
 
 <div align="center">
 
- <img src="https://github.com/Pierrepierrepierrepierrepierrepierre/projetSVM/raw/main/assets/124379009/3e9c5104-602d-453d-9883-80a1c8d9f984" width="400"/>
 
+<img src="https://github.com/Pierrepierrepierrepierrepierrepierre/projetSVM/raw/main/assets/124379009/3e9c5104-602d-453d-9883-80a1c8d9f984" width="420"/> 
 
  
 </div>
@@ -187,9 +187,9 @@ Ainsi nous nous sommes demandé s’il ne fallait pas retirer les variables type
 <div align="center">
 
 
- <img src="[https://github.com/Pierrepierrepierrepierrepierrepierre/projetSVM/assets/117682143/6631788f-243c-4ca9-bbb0-cf1c898ca7c2](https://github.com/Pierrepierrepierrepierrepierrepierre/projetSVM/assets/124379009/05ec7045-f963-49bf-a53c-93c55d749d06)"  width="400"/>
 
 
+<img src="https://github.com/Pierrepierrepierrepierrepierrepierre/projetSVM/assets/124379009/05ec7045-f963-49bf-a53c-93c55d749d06" width="420"/> 
 
 </div>
 
