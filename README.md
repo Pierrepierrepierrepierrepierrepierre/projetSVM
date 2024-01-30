@@ -11,7 +11,7 @@
 
 # I. Introduction
 
-Dans le cadre de notre projet de Machine Learning et de Deep Learning, nous nous sommes lancés dans l'analyse approfondie d'une base de données portant sur la qualité et le type de vins. Cette base, récupérée sur le site de référence Kaggle et créé par un auteur du nom de Raj Parmar, inclut des informations détaillées sur un vaste éventail de vins, rouges comme blancs.
+Dans le cadre de notre projet de Machine Learning, nous nous sommes lancés dans l'analyse approfondie d'une base de données portant sur la qualité et le type de vins. Cette base, récupérée sur le site de référence Kaggle et créé par un auteur du nom de Raj Parmar, inclut des informations détaillées sur un vaste éventail de vins, rouges comme blancs.
 Notre objectif est double : prédire la qualité du vin, évaluée sur une échelle de 0 à 10, et classifier le vin en tant que rouge ou blanc. Cette tâche s'appuie sur l'exploitation de divers paramètres chimiques et physiques des vins, tels que l'acidité, le sucre résiduel, les chlorures, le sulfite, la densité, le pH, les sulfates, et la teneur en alcool. 
 &nbsp; 
 
@@ -70,7 +70,7 @@ Le graphique ci dessus nous montre la répartition de deux types de vins. On obs
 Pour ce qui est de la variable qualité, nous avons préféré un histogramme en barre pour analyser la répartition. Les histogrammes en barres offrent une comparaison et une interprétation plus claires des fréquences lorsque l’on analyse des variables catégorielles. 
 Ainsi, nous observons une distribution asymétrique où la majorité des vins se concentrent autour des notes de qualité moyenne correspondant à une loi normale, ce qui est logique  puisque la plupart des vins reçoivent des notes moyennes et moins reçoivent des notes extrêmes.
 
-De ce fait, nous devrons procéder à un rééquilibrage des classes afin d’avoir des modèles pertinents  
+De ce fait, nous devrons procéder à un rééquilibrage des classes afin d’avoir des modèles pertinents.
 
 ### 2- Features
 
@@ -196,7 +196,7 @@ Ainsi nous nous sommes demandé s’il ne fallait pas retirer les variables type
 ![outputviolin](https://github.com/Pierrepierrepierrepierrepierrepierre/projetSVM/assets/124379009/d37ad49c-195f-45f4-acea-6a577c0e09ad)
 
 </div>
-Les violin plots présentés montrent que les features de l'ensemble de données possèdent des échelles de valeurs variées, des distributions de fréquence différentes, et pour certaines, des valeurs extrêmes. La standardisation de ces features est justifiée car elle permet de mettre chaque feature à la même échelle afin qu'il soit comparable dans nos modèles de machine learning.. En ajustant les données pour qu'elles aient une moyenne de zéro et une variance unitaire, on garantit que chaque feature contribue de manière équitable au modèle, sans être influencée par l'ampleur de sa gamme de valeurs. 
+Les violin plots présentés montrent que les features de l'ensemble de données possèdent des échelles de valeurs variées, des distributions de fréquence différentes, et pour certaines, des valeurs extrêmes. La standardisation de ces features est justifiée car elle permet de mettre chaque feature à la même échelle afin qu'il soit comparable dans nos modèles de machine learning. En ajustant les données pour qu'elles aient une moyenne de zéro et une variance unitaire, on garantit que chaque feature contribue de manière équitable au modèle, sans être influencée par l'ampleur de sa gamme de valeurs. 
 
 ## e) Analyse multivariée
 
@@ -245,7 +245,7 @@ Ensuite, nous procédons à la même analyse pour nos variables densité et alco
 
 </div>
 
-on observe qu'il n'y a aucune différence pour la densité ainsi que pour la teneur en alcool. Nous nous intéressons alors à la variable qualité. 
+On observe qu'il n'y a aucune différence pour la densité ainsi que pour la teneur en alcool. Nous nous intéressons alors à la variable qualité. 
 
 <div align="center">
   
