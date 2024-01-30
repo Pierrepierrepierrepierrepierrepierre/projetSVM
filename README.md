@@ -182,10 +182,10 @@ Le graphique à barres présenté détaille la distribution des notes de qualit�
 
 ## c) Test de Khi-II
 
-Une étape clé est d'examiner la relation entre la qualité du vin et son type (rouge ou blanc) afin de vérifier qu’elles ne sont pas dépendantes.
-Pour cela, un test statistique de Chi2 a été utilisé, qui est un outil standard pour évaluer si deux variables catégorielles sont indépendantes l'une de l'autre ou non.
-Le test de Chi2 appliqué aux données a révélé des résultats significatifs. Avec une valeur de Chi2 de 117.03 et une p-valeur extrêmement faible (approximativement 6.86e-23), le test indique clairement que la qualité du vin et le type de vin ne sont pas indépendants.
-Ainsi nous nous sommes demandé s’il ne fallait pas retirer les variables type et qualité dans les modèles visant à expliquer l'autre. Cependant, l'intégration de la variable "type" dans la modélisation de la qualité, et de la "qualité" pour prédire le type, est une approche qui nous semble malgré tout pertinente puisque cela permet d'exploiter pleinement les données disponibles et in fine d’augmenter la précision de la prédiction de notre modèle, ce qui est l’objectif de ce dossier.
+Un aspect crucial consiste à examiner la relation entre la qualité du vin et son type (rouge ou blanc) afin de vérifier qu'elles ne sont pas interdépendantes. À cette fin, nous avons employé un test statistique de Chi2, un outil standard pour évaluer l'indépendance entre deux variables catégorielles. Les résultats du test de Chi2 appliqué à nos données ont été significatifs, entraînant le rejet de l'hypothèse nulle qui stipulait l'absence de relation entre les deux variables catégorielles. Avec une p-valeur extrêmement faible (environ 6.86e-23), il est clair que la qualité du vin et le type de vin ne sont pas indépendants.
+
+Cette constatation a suscité la réflexion sur la possibilité d'éliminer les variables "type" et "qualité" des modèles visant à expliquer l'une par l'autre. Cependant, nous avons décidé de maintenir ces variables dans nos modèles. Intégrer la variable "type" dans la modélisation de la qualité, et vice versa, nous semble toujours pertinente, car cela exploite pleinement les données disponibles et vise ultimement à accroître la précision de la prédiction du modèle, qui demeure l'objectif principal de notre étude.
+
 
 
 
